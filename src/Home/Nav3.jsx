@@ -1,9 +1,14 @@
 import React from 'react';
 import TweenOne from 'rc-tween-one';
-import { Menu } from 'antd';
-import { getChildrenToRender } from './utils';
+import {Button, Input, Menu, Space} from 'antd';
+import {getChildrenToRender} from './utils';
+import {SearchOutlined} from '@ant-design/icons';
+// TODO 添加路由
+// import { Link } from "react-router-dom";
+import style from './less/nav.module.less';
 
 const { Item, SubMenu } = Menu;
+const { Search } = Input;
 
 class Header3 extends React.Component {
   constructor(props) {
@@ -127,6 +132,15 @@ class Header3 extends React.Component {
               {navChildren}
             </Menu>
           </TweenOne>
+          <Space className={style.headerRight} size={20}>
+            <Input
+              size="large"
+              placeholder="搜索产品或内容"
+              suffix={<SearchOutlined />}
+            />
+            <Button type="text">控制台</Button>
+            <Button type="text">登录</Button>
+          </Space>
         </div>
       </TweenOne>
     );

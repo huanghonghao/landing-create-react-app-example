@@ -1,7 +1,17 @@
 import React from 'react';
+import {createFromIconfontCN} from '@ant-design/icons';
+
+const Down = createFromIconfontCN({
+  extraCommonProps: {
+    height: 20,
+    width: 20
+  },
+  scriptUrl: '//at.alicdn.com/t/font_1731242_qtv348k3m1k.js', // 在 iconfont.cn 上生成
+});
+
 export const Nav30DataSource = {
-  wrapper: { className: 'header3 home-page-wrapper' },
-  page: { className: 'home-page' },
+  wrapper: {className: 'header3 home-page-wrapper'},
+  page: {className: 'home-page'},
   logo: {
     className: 'header3-logo',
     children:
@@ -19,7 +29,7 @@ export const Nav30DataSource = {
             {
               children: (
                 <span>
-                  <p>网站首页</p>
+                  <p>首页  </p>
                 </span>
               ),
               name: 'text',
@@ -36,13 +46,25 @@ export const Nav30DataSource = {
             {
               children: (
                 <span>
-                  <p>公司简介</p>
+                  <p>服务门户 <Down type="icon-down" /></p>
                 </span>
               ),
               name: 'text',
             },
           ],
         },
+        subItem: [
+          {
+            children: {
+              children: [
+                {
+                  children: "shouye",
+                  name: 'text'
+                }
+              ]
+            }
+          }
+        ],
       },
       {
         name: 'item2',
@@ -53,7 +75,7 @@ export const Nav30DataSource = {
             {
               children: (
                 <span>
-                  <p>回收项目</p>
+                  <p>服务设计 <Down type="icon-down" /></p>
                 </span>
               ),
               name: 'text',
@@ -70,7 +92,7 @@ export const Nav30DataSource = {
             {
               children: (
                 <span>
-                  <p>成功案例</p>
+                  <p>服务开发 <Down type="icon-down" /></p>
                 </span>
               ),
               name: 'text',
@@ -87,15 +109,7 @@ export const Nav30DataSource = {
             {
               children: (
                 <span>
-                  <span>
-                    <span>
-                      <span>
-                        <span>
-                          <p>新闻咨询</p>
-                        </span>
-                      </span>
-                    </span>
-                  </span>
+                  <p>服务运营 <Down type="icon-down" /></p>
                 </span>
               ),
               name: 'text',
@@ -112,32 +126,7 @@ export const Nav30DataSource = {
             {
               children: (
                 <span>
-                  <span>
-                    <span>
-                      <p>在线留言</p>
-                    </span>
-                  </span>
-                </span>
-              ),
-              name: 'text',
-            },
-          ],
-        },
-      },
-      {
-        name: 'item6',
-        className: 'header3-item',
-        children: {
-          href: '#',
-          children: [
-            {
-              children: (
-                <span>
-                  <span>
-                    <span>
-                      <p>联系我们</p>
-                    </span>
-                  </span>
+                  <p>系统管理 <Down type="icon-down" /></p>
                 </span>
               ),
               name: 'text',
@@ -147,67 +136,66 @@ export const Nav30DataSource = {
       },
     ],
   },
-  mobileMenu: { className: 'header3-mobile-menu' },
+  mobileMenu: {className: 'header3-mobile-menu'},
 };
 export const Banner10DataSource = {
-  wrapper: { className: 'banner1' },
+  wrapper: {className: 'banner1'},
   BannerAnim: {
     children: [
       {
         name: 'elem0',
-        BannerElement: { className: 'banner-user-elem' },
-        textWrapper: { className: 'banner1-text-wrapper' },
-        bg: { className: 'bg bg0' },
+        BannerElement: {className: 'banner-user-elem'},
+        textWrapper: {className: 'banner1-text-wrapper'},
+        bg: {className: 'bg bg0'},
         title: {
           className: 'banner1-title',
-          children:
-            'https://zos.alipayobjects.com/rmsportal/HqnZZjBjWRbjyMr.png',
+          children: '打破壁垒、场景驱动、快速响应、赋能业务',
         },
         content: {
           className: 'banner1-content',
-          children: '一个高效的页面动画解决方案',
+          children: '基于统一的业务模型，打造“可视、可管、可控、可优”的共享服务平台',
         },
-        button: { className: 'banner1-button', children: 'Learn More' },
       },
-      {
-        name: 'elem1',
-        BannerElement: { className: 'banner-user-elem' },
-        textWrapper: { className: 'banner1-text-wrapper' },
-        bg: { className: 'bg bg1' },
-        title: {
-          className: 'banner1-title',
-          children:
-            'https://zos.alipayobjects.com/rmsportal/HqnZZjBjWRbjyMr.png',
-        },
-        content: {
-          className: 'banner1-content',
-          children: '一个高效的页面动画解决方案',
-        },
-        button: { className: 'banner1-button', children: 'Learn More' },
-      },
-      {
-        name: 'elem2',
-        BannerElement: { className: 'banner-user-elem' },
-        textWrapper: { className: 'banner1-text-wrapper' },
-        bg: { className: 'bg bg1' },
-        title: {
-          className: 'banner1-title',
-          children:
-            'https://zos.alipayobjects.com/rmsportal/HqnZZjBjWRbjyMr.png',
-        },
-        content: {
-          className: 'banner1-content',
-          children: '一个高效的页面动画解决方案',
-        },
-        button: { className: 'banner1-button', children: 'Learn More' },
-      },
+      // {
+      //   name: 'elem1',
+      //   BannerElement: {className: 'banner-user-elem'},
+      //   textWrapper: {className: 'banner1-text-wrapper'},
+      //   bg: {className: 'bg bg1'},
+      //   title: {
+      //     className: 'banner1-title',
+      //     children:
+      //       'https://zos.alipayobjects.com/rmsportal/HqnZZjBjWRbjyMr.png',
+      //   },
+      //   content: {
+      //     className: 'banner1-content',
+      //     children: '一个高效的页面动画解决方案',
+      //   },
+      //   button: {className: 'banner1-button', children: 'Learn More'},
+      // },
+      // {
+      //   name: 'elem2',
+      //   BannerElement: {className: 'banner-user-elem'},
+      //   textWrapper: {className: 'banner1-text-wrapper'},
+      //   bg: {className: 'bg bg1'},
+      //   title: {
+      //     className: 'banner1-title',
+      //     children:
+      //       'https://zos.alipayobjects.com/rmsportal/HqnZZjBjWRbjyMr.png',
+      //   },
+      //   content: {
+      //     className: 'banner1-content',
+      //     children: '一个高效的页面动画解决方案',
+      //   },
+      //   button: {className: 'banner1-button', children: 'Learn More'},
+      // },
     ],
   },
+  statistics: [1,2,3,4],
 };
 export const Content00DataSource = {
-  wrapper: { className: 'home-page-wrapper content0-wrapper' },
-  page: { className: 'home-page content0' },
-  OverPack: { playScale: 0.3, className: '' },
+  wrapper: {className: 'home-page-wrapper content0-wrapper'},
+  page: {className: 'home-page content0'},
+  OverPack: {playScale: 0.3, className: ''},
   titleWrapper: {
     className: 'title-wrapper',
     children: [
@@ -410,9 +398,9 @@ export const Content00DataSource = {
   },
 };
 export const Content50DataSource = {
-  wrapper: { className: 'home-page-wrapper content5-wrapper' },
-  page: { className: 'home-page content5' },
-  OverPack: { playScale: 0.3, className: '' },
+  wrapper: {className: 'home-page-wrapper content5-wrapper'},
+  page: {className: 'home-page content5'},
+  OverPack: {playScale: 0.3, className: ''},
   titleWrapper: {
     className: 'title-wrapper',
     children: [
@@ -437,12 +425,12 @@ export const Content50DataSource = {
         md: 6,
         xs: 24,
         children: {
-          wrapper: { className: 'content5-block-content' },
+          wrapper: {className: 'content5-block-content'},
           img: {
             children:
               'https://t.alipayobjects.com/images/rmsweb/T11aVgXc4eXXXXXXXX.svg',
           },
-          content: { children: 'Ant Design' },
+          content: {children: 'Ant Design'},
         },
       },
       {
@@ -451,12 +439,12 @@ export const Content50DataSource = {
         md: 6,
         xs: 24,
         children: {
-          wrapper: { className: 'content5-block-content' },
+          wrapper: {className: 'content5-block-content'},
           img: {
             children:
               'https://zos.alipayobjects.com/rmsportal/faKjZtrmIbwJvVR.svg',
           },
-          content: { children: 'Ant Motion' },
+          content: {children: 'Ant Motion'},
         },
       },
       {
@@ -465,12 +453,12 @@ export const Content50DataSource = {
         md: 6,
         xs: 24,
         children: {
-          wrapper: { className: 'content5-block-content' },
+          wrapper: {className: 'content5-block-content'},
           img: {
             children:
               'https://t.alipayobjects.com/images/rmsweb/T11aVgXc4eXXXXXXXX.svg',
           },
-          content: { children: 'Ant Design' },
+          content: {children: 'Ant Design'},
         },
       },
       {
@@ -479,12 +467,12 @@ export const Content50DataSource = {
         md: 6,
         xs: 24,
         children: {
-          wrapper: { className: 'content5-block-content' },
+          wrapper: {className: 'content5-block-content'},
           img: {
             children:
               'https://zos.alipayobjects.com/rmsportal/faKjZtrmIbwJvVR.svg',
           },
-          content: { children: 'Ant Motion' },
+          content: {children: 'Ant Motion'},
         },
       },
       {
@@ -493,12 +481,12 @@ export const Content50DataSource = {
         md: 6,
         xs: 24,
         children: {
-          wrapper: { className: 'content5-block-content' },
+          wrapper: {className: 'content5-block-content'},
           img: {
             children:
               'https://t.alipayobjects.com/images/rmsweb/T11aVgXc4eXXXXXXXX.svg',
           },
-          content: { children: 'Ant Design' },
+          content: {children: 'Ant Design'},
         },
       },
       {
@@ -507,12 +495,12 @@ export const Content50DataSource = {
         md: 6,
         xs: 24,
         children: {
-          wrapper: { className: 'content5-block-content' },
+          wrapper: {className: 'content5-block-content'},
           img: {
             children:
               'https://zos.alipayobjects.com/rmsportal/faKjZtrmIbwJvVR.svg',
           },
-          content: { children: 'Ant Motion' },
+          content: {children: 'Ant Motion'},
         },
       },
       {
@@ -521,12 +509,12 @@ export const Content50DataSource = {
         md: 6,
         xs: 24,
         children: {
-          wrapper: { className: 'content5-block-content' },
+          wrapper: {className: 'content5-block-content'},
           img: {
             children:
               'https://t.alipayobjects.com/images/rmsweb/T11aVgXc4eXXXXXXXX.svg',
           },
-          content: { children: 'Ant Design' },
+          content: {children: 'Ant Design'},
         },
       },
       {
@@ -535,21 +523,21 @@ export const Content50DataSource = {
         md: 6,
         xs: 24,
         children: {
-          wrapper: { className: 'content5-block-content' },
+          wrapper: {className: 'content5-block-content'},
           img: {
             children:
               'https://zos.alipayobjects.com/rmsportal/faKjZtrmIbwJvVR.svg',
           },
-          content: { children: 'Ant Motion' },
+          content: {children: 'Ant Motion'},
         },
       },
     ],
   },
 };
 export const Content30DataSource = {
-  wrapper: { className: 'home-page-wrapper content3-wrapper' },
-  page: { className: 'home-page content3' },
-  OverPack: { playScale: 0.3 },
+  wrapper: {className: 'home-page-wrapper content3-wrapper'},
+  page: {className: 'home-page content3'},
+  OverPack: {playScale: 0.3},
   titleWrapper: {
     className: 'title-wrapper',
     children: [
@@ -591,7 +579,7 @@ export const Content30DataSource = {
             children:
               'https://zos.alipayobjects.com/rmsportal/ScHBSdwpTkAHZkJ.png',
           },
-          textWrapper: { className: 'content3-text' },
+          textWrapper: {className: 'content3-text'},
           title: {
             className: 'content3-title',
             children: (
@@ -627,7 +615,7 @@ export const Content30DataSource = {
             children:
               'https://zos.alipayobjects.com/rmsportal/NKBELAOuuKbofDD.png',
           },
-          textWrapper: { className: 'content3-text' },
+          textWrapper: {className: 'content3-text'},
           title: {
             className: 'content3-title',
             children: (
@@ -657,7 +645,7 @@ export const Content30DataSource = {
             children:
               'https://zos.alipayobjects.com/rmsportal/xMSBjgxBhKfyMWX.png',
           },
-          textWrapper: { className: 'content3-text' },
+          textWrapper: {className: 'content3-text'},
           title: {
             className: 'content3-title',
             children: (
@@ -687,7 +675,7 @@ export const Content30DataSource = {
             children:
               'https://zos.alipayobjects.com/rmsportal/MNdlBNhmDBLuzqp.png',
           },
-          textWrapper: { className: 'content3-text' },
+          textWrapper: {className: 'content3-text'},
           title: {
             className: 'content3-title',
             children: (
@@ -715,8 +703,8 @@ export const Content30DataSource = {
   },
 };
 export const Feature50DataSource = {
-  wrapper: { className: 'home-page-wrapper content7-wrapper' },
-  page: { className: 'home-page content7' },
+  wrapper: {className: 'home-page-wrapper content7-wrapper'},
+  page: {className: 'home-page content7'},
   OverPack: {},
   titleWrapper: {
     className: 'title-wrapper',
@@ -732,7 +720,7 @@ export const Feature50DataSource = {
       },
     ],
   },
-  tabsWrapper: { className: 'content7-tabs-wrapper' },
+  tabsWrapper: {className: 'content7-tabs-wrapper'},
   block: {
     children: [
       {
@@ -747,7 +735,7 @@ export const Feature50DataSource = {
             ),
             className: 'content7-tag-name',
           },
-          icon: { children: 'mobile' },
+          icon: {children: 'mobile'},
         },
         content: {
           className: 'content7-content',
@@ -761,12 +749,12 @@ export const Feature50DataSource = {
                 <p>
                   丰富的技术组件，简单组装即可快速搭建金融级应用，丰富的技术组件，简单组装即可快速搭建金融级应用。
                 </p>
-                <br />
+                <br/>
                 <h3>融合</h3>
                 <p>
                   解放业务及技术生产力，推动金融服务底层创新，推动金融服务底层创新。解放业务及技术生产力，推动金融服务底层创新。
                 </p>
-                <br />
+                <br/>
                 <h3>
                   开放
                 </h3>符合金融及要求的安全可靠、高可用、高性能的服务能力，符合金融及要求的安全可靠、高可用、高性能的服务能力。
@@ -786,7 +774,7 @@ export const Feature50DataSource = {
         name: 'block1',
         tag: {
           className: 'content7-tag',
-          icon: { children: 'tablet' },
+          icon: {children: 'tablet'},
           text: {
             className: 'content7-tag-name',
             children: (
@@ -808,12 +796,12 @@ export const Feature50DataSource = {
                 <p>
                   丰富的技术组件，简单组装即可快速搭建金融级应用，丰富的技术组件，简单组装即可快速搭建金融级应用。
                 </p>
-                <br />
+                <br/>
                 <h3>融合</h3>
                 <p>
                   解放业务及技术生产力，推动金融服务底层创新，推动金融服务底层创新。解放业务及技术生产力，推动金融服务底层创新。
                 </p>
-                <br />
+                <br/>
                 <h3>
                   开放
                 </h3>符合金融及要求的安全可靠、高可用、高性能的服务能力，符合金融及要求的安全可靠、高可用、高性能的服务能力。
@@ -833,8 +821,8 @@ export const Feature50DataSource = {
   },
 };
 export const Footer10DataSource = {
-  wrapper: { className: 'home-page-wrapper footer1-wrapper' },
-  OverPack: { className: 'footer1', playScale: 0.2 },
+  wrapper: {className: 'home-page-wrapper footer1-wrapper'},
+  OverPack: {className: 'footer1', playScale: 0.2},
   block: {
     className: 'home-page',
     gutter: 0,
@@ -930,11 +918,11 @@ export const Footer10DataSource = {
         xs: 24,
         md: 6,
         className: 'block',
-        title: { children: '关于' },
+        title: {children: '关于'},
         childWrapper: {
           children: [
-            { href: '#', name: 'link0', children: 'FAQ' },
-            { href: '#', name: 'link1', children: '联系我们' },
+            {href: '#', name: 'link0', children: 'FAQ'},
+            {href: '#', name: 'link1', children: '联系我们'},
           ],
         },
       },
@@ -966,8 +954,8 @@ export const Footer10DataSource = {
       },
     ],
   },
-  copyrightWrapper: { className: 'copyright-wrapper' },
-  copyrightPage: { className: 'home-page' },
+  copyrightWrapper: {className: 'copyright-wrapper'},
+  copyrightPage: {className: 'home-page'},
   copyright: {
     className: 'copyright',
     children: (

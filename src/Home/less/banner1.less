@@ -2,32 +2,33 @@
 @banner1: banner1;
 .@{banner1} {
   // 如果在第一屏且导航位置为 relative, 一屏为 height: calc(~"100vh - 64px");
-  width: 100%;
+  margin-top: 72px;
   height: 100vh;
+  width: 100%;
   position: relative;
   border-color: #666;
   background: #fff;
   &-wrapper, .banner-anim {
-    height: 100%;
+    height: 575px;
   }
   & .queue-anim-leaving {
     position: relative !important;
   }
   .banner-user-elem {
-    height: 100%;
+    //height: 100%;
     color: #fff;
     position: relative;
     overflow: hidden;
   }
   .bg0 {
-    background: url("https://zos.alipayobjects.com/rmsportal/hzPBTkqtFpLlWCi.jpg") center;
+    background: url("../imgs/banner.png") center;
   }
   .bg1 {
     background: url("https://zos.alipayobjects.com/rmsportal/xHxWkcvaIcuAdQl.jpg") center;
   }
   .bg {
     width: 100%;
-    height: 100%;
+    height: 575px;
     position: absolute;
     top: 0;
     left: 0;
@@ -43,27 +44,25 @@
   }
   & &-text-wrapper {
     display: block;
-    position: relative;
-    top: 20%;
-    left: 0;
+    position: absolute;
+    top: 28%;
+    left: 8%;
     right: 0;
     margin: auto;
     font-size: 14px;
     color: @template-text-color-light;
-    width: 550px;
-    text-align: center;
+    line-height: 2.5;
   }
   & &-title {
-    width: 350px;
-    left: 30px;
     margin: auto;
     display: inline-block;
-    font-size: 40px;
+    font-size: 44px;
     position: relative;
   }
   & &-content {
-    margin-bottom: 20px;
     word-wrap: break-word;
+    font-size: 23px;
+    font-weight: lighter;
   }
   & &-button {
     border: 1px solid #fff;
