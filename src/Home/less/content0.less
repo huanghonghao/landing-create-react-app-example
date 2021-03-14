@@ -1,15 +1,99 @@
 @content0: content0;
 
 .@{content0}-wrapper {
-  min-height: 446px;
-  overflow: hidden;
+  >.footer-wrapper {
+    position: relative;
+    top: -100px;
+    .ant-col {
+      box-shadow: 15px 15px 30px rgba(167, 173, 177, 0.2);
+    }
+  }
 
   .@{content0} {
     height: 100%;
-    padding: 64px 24px;
+    min-height: 446px;
+    background: url("../imgs/share.png") center;
+    background-size: cover;
 
-    >.title-wrapper {
-      margin: 0 auto 48px;
+    .content-main {
+      position: relative;
+      font-size: 16px;
+      width: 100%;
+      margin: auto;
+      max-width: 881px;
+
+      .ant-col {
+        text-align: center;
+        font-size: 16px;
+      }
+
+      &-num {
+        font-weight: 600;
+        font-size: 24px;
+        color: #3784FF;
+        letter-spacing: 0;
+      }
+
+      &-share {
+        position: absolute;
+        top: 0;
+        background: url("../imgs/shareServiceType.png") center;
+        background-size: cover;
+        height: 469px;
+        width: 100%;
+      }
+
+      &-logo {
+        position: absolute;
+        top: 140px;
+        left: 250px;
+        background: url("../imgs/shareServiceTypeMain.png") center;
+        background-size: cover;
+        height: 430px;
+        width: 400px;
+      }
+
+    }
+
+    &-card {
+      position: relative;
+      img {
+        vertical-align: top;
+      }
+      &-right {
+        display: inline-block;
+        //vertical-align: bottom;
+        margin-top: 15px;
+        margin-left: 18px;
+      }
+
+      .meta-wrap {
+        float: left;
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+      }
+
+      .meta {
+        color: @text-color-secondary;
+        font-size: @font-size-base;
+        line-height: 20px;
+        height: 22px;
+      }
+
+      .total {
+        font-family: PingFangSC-Medium, sans-serif;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        word-break: break-all;
+        white-space: nowrap;
+        color: @heading-color;
+        margin-top: 4px;
+        margin-bottom: 0;
+        font-size: 32px;
+        line-height: 38px;
+        height: 38px;
+      }
     }
 
     &-block {
@@ -24,9 +108,12 @@
 
       &-wrapper {
         position: relative;
-        height: 100%;
-        top: 25%;
-        padding: 20px 0;
+        background-color: rgba(255,255,255,0);
+        height: 720px;
+        //width: 881px;
+        //width: 100%;
+        //margin: auto;
+        //max-width: 881px;
       }
 
       &.queue-anim-leaving {

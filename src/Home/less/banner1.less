@@ -3,12 +3,12 @@
 .@{banner1} {
   // 如果在第一屏且导航位置为 relative, 一屏为 height: calc(~"100vh - 64px");
   margin-top: 72px;
-  height: 100vh;
+  //height: 100vh;
   width: 100%;
-  position: relative;
+  //position: relative;
   border-color: #666;
   background: #fff;
-  &-wrapper, .banner-anim {
+  .banner-anim {
     height: 575px;
   }
   & .queue-anim-leaving {
@@ -99,6 +99,60 @@
     left: 50%;
     margin-left: -12px;
     color: @template-text-color-light;
+  }
+
+  & &-card {
+    position: relative;
+    img {
+      vertical-align: top;
+    }
+    &-right {
+      display: inline-block;
+      vertical-align: bottom;
+      margin-left: 18px;
+    }
+
+    .meta-wrap {
+      float: left;
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+    }
+
+    .meta {
+      color: @text-color-secondary;
+      font-size: @font-size-base;
+      line-height: 22px;
+      height: 22px;
+    }
+
+    .total {
+      font-family: PingFangSC-Medium, sans-serif;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      word-break: break-all;
+      white-space: nowrap;
+      color: @heading-color;
+      margin-top: 4px;
+      margin-bottom: 0;
+      font-size: 32px;
+      line-height: 38px;
+      height: 38px;
+    }
+
+    .content {
+      .meta();
+      margin-bottom: 12px;
+      position: relative;
+      width: 100%;
+    }
+
+    .content-fixed {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+    }
   }
 }
 

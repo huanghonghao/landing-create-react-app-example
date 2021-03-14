@@ -1,90 +1,136 @@
 import React from 'react';
-import QueueAnim from 'rc-queue-anim';
-import TweenOne from 'rc-tween-one';
-import { Row, Col } from 'antd';
-import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
-import { getChildrenToRender } from './utils';
+import {Col, Radio, Row} from 'antd';
+import TitleWrapper from "./TitleWrapper";
+import {Area} from '@antv/g2plot';
+import fall from './imgs/fall.png';
+import numeral from 'numeral';
 
 class Content3 extends React.PureComponent {
-  getDelay = (e, b) => (e % b) * 100 + Math.floor(e / b) * 100 + b * 100;
+
+  componentDidMount() {
+    // console.log(document.getElementById(content3-container));
+    fetch('https://gw.alipayobjects.com/os/bmw-prod/1d565782-dde4-4bb6-8946-ea6a38ccf184.json')
+      .then((res) => res.json())
+      .then((data) => {
+        const line = new Area('content3-container', {
+          data,
+          padding: 'auto',
+          xField: 'Date',
+          yField: 'scales',
+          xAxis: {
+            // type: 'timeCat',
+            tickCount: 12,
+          },
+          yAxis: {
+            label: {
+              formatter: v => numeral(v).format('0,0')
+            }
+          },
+          areaStyle: () => {
+            return {
+              fill: 'l(270) 0:#ffffff 0.5:#7ec2f3 1:#1890ff',
+            };
+          },
+        });
+
+        line.render();
+      });
+  }
 
   render() {
     const { ...props } = this.props;
-    const { dataSource, isMobile } = props;
-    delete props.dataSource;
-    delete props.isMobile;
-    let clearFloatNum = 0;
-    const children = dataSource.block.children.map((item, i) => {
-      const childObj = item.children;
-      const delay = isMobile ? i * 50 : this.getDelay(i, 24 / item.md);
-      const liAnim = {
-        opacity: 0,
-        type: 'from',
-        ease: 'easeOutQuad',
-        delay,
-      };
-      const childrenAnim = { ...liAnim, x: '+=10', delay: delay + 100 };
-      clearFloatNum += item.md;
-      clearFloatNum = clearFloatNum > 24 ? 0 : clearFloatNum;
-      return (
-        <TweenOne
-          component={Col}
-          animation={liAnim}
-          key={item.name}
-          {...item}
-          componentProps={{ md: item.md, xs: item.xs }}
-          className={
-            !clearFloatNum
-              ? `${item.className || ''} clear-both`.trim()
-              : item.className
-          }
-        >
-          <TweenOne
-            animation={{
-              x: '-=10',
-              opacity: 0,
-              type: 'from',
-              ease: 'easeOutQuad',
-            }}
-            key="img"
-            {...childObj.icon}
-          >
-            <img src={childObj.icon.children} width="100%" alt="img" />
-          </TweenOne>
-          <div {...childObj.textWrapper}>
-            <TweenOne
-              key="h2"
-              animation={childrenAnim}
-              component="h2"
-              {...childObj.title}
-            >
-              {childObj.title.children}
-            </TweenOne>
-            <TweenOne
-              key="p"
-              animation={{ ...childrenAnim, delay: delay + 200 }}
-              component="div"
-              {...childObj.content}
-            >
-              {childObj.content.children}
-            </TweenOne>
-          </div>
-        </TweenOne>
-      );
-    });
+    const { dataSource } = props;
+    const { wrapper, page, titleWrapper, overPack } = dataSource;
     return (
-      <div {...props} {...dataSource.wrapper}>
-        <div {...dataSource.page}>
-          <div {...dataSource.titleWrapper}>
-            {dataSource.titleWrapper.children.map(getChildrenToRender)}
-          </div>
-          <OverPack {...dataSource.OverPack}>
-            <QueueAnim key="u" type="bottom">
-              <Row key="row" {...dataSource.block}>
-                {children}
-              </Row>
-            </QueueAnim>
-          </OverPack>
+      <div {...props} {...wrapper}>
+        <div className="content3-bg-wrapper">
+          <div className="content3-bg" />
+        </div>
+        <div {...page}>
+          <TitleWrapper
+            options={[
+              {label: '业务服务', value: 0},
+              {label: '数据服务', value: 1},
+            ]}
+            titleWrapper={titleWrapper}
+            leftProps={{xl: 9}}
+            rightProps={{xl: 12}}
+          />
+          <Row justify="center" >
+            <Col xl={20} xxl={18}>
+              <div className="content3-chart">
+                <Row key="row1" gutter={{xl: 24}}>
+                  <Col xl={6}>
+                    <div style={{background: '#00D2C8'}}>
+                      <div className="content3-chart-sum">
+                        820<span> 次</span>
+                      </div>
+                      <div className="content3-chart-sum-desc">
+                        <span>今日总调用</span>
+                        <span>同比：1.5%</span>
+                        <img src={fall} alt=""/>
+                      </div>
+                    </div>
+                  </Col>
+                  <Col xl={6}>
+                    <div style={{background: '#00CEFB'}}>
+                      <div className="content3-chart-sum">
+                        1253<span> 次</span>
+                      </div>
+                      <div className="content3-chart-sum-desc">
+                        <span>本周总调用</span>
+                        <span>同比：1.5%</span>
+                        <img src={fall} alt=""/>
+                      </div>
+                    </div>
+                  </Col>
+                  <Col xl={6}>
+                    <div style={{background: '#01AAFB'}}>
+                      <div className="content3-chart-sum">
+                        19234<span> 次</span>
+                      </div>
+                      <div className="content3-chart-sum-desc">
+                        <span>本月总调用</span>
+                        <span>同比：1.5%</span>
+                        <img src={fall} alt=""/>
+                      </div>
+                    </div>
+                  </Col>
+                  <Col xl={6}>
+                    <div style={{background: '#008CFF'}}>
+                      <div className="content3-chart-sum">
+                        42466<span> 次</span>
+                      </div>
+                      <div className="content3-chart-sum-desc">
+                        <span>年度总调用</span>
+                        <span>同比：1.5%</span>
+                        <img src={fall} alt=""/>
+                      </div>
+                    </div>
+                  </Col>
+                </Row>
+                <div className="content3-chart-area">
+                  <div className="content3-chart-area-top">
+                    <h3>业务服务</h3>
+                    <Radio.Group
+                      options={[
+                        {label: '日', value: 0},
+                        {label: '周', value: 1},
+                        {label: '月', value: 2},
+                        {label: '年', value: 3}
+                      ]}
+                      optionType="button"
+                      size="small"
+                    />
+                  </div>
+                  <div style={{color: '#666666', marginBottom: 30}}>
+                    次数 (次)
+                  </div>
+                  <div id="content3-container" />
+                </div>
+              </div>
+            </Col>
+          </Row>
         </div>
       </div>
     );

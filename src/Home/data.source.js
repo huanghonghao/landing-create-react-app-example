@@ -1,5 +1,18 @@
 import React from 'react';
 import {createFromIconfontCN} from '@ant-design/icons';
+import totalServiceCalls from './imgs/totalServiceCalls.png';
+import totalBusinessServiceCalls from './imgs/totalBusinessServiceCalls.png';
+import totalDataServiceCalls from './imgs/totalDataServiceCalls.png';
+import serviceCallDistribution from './imgs/serviceCallDistribution.png';
+import businessObject from './imgs/businessObject.png';
+import businessActive from './imgs/businessActive.png';
+import businessScenes from './imgs/businessScenes.png';
+import businessService from './imgs/businessService.png';
+import dataService from './imgs/dataService.png';
+import businessApp from './imgs/businessApp.png';
+import publicModel from './imgs/publicModel.png';
+import table from './imgs/table.png';
+
 
 const Down = createFromIconfontCN({
   extraCommonProps: {
@@ -190,7 +203,36 @@ export const Banner10DataSource = {
       // },
     ],
   },
-  statistics: [1,2,3,4],
+  statistics: [
+    {
+      title: '服务调用总量',
+      imgSrc: totalServiceCalls,
+      total: 12033,
+      monthRatio: 1.4,
+      yearRatio: -1.3
+    },
+    {
+      title: '业务服务调用总量',
+      imgSrc: totalBusinessServiceCalls,
+      total: 1815,
+      monthRatio: 1.4,
+      yearRatio: -1.3
+    },
+    {
+      title: '数据服务调用总量',
+      imgSrc: totalDataServiceCalls,
+      total: 10218,
+      monthRatio: 1.4,
+      yearRatio: -1.3
+    },
+    {
+      title: '服务调用分布',
+      imgSrc: serviceCallDistribution,
+      total: 9281,
+      monthRatio: 1.4,
+      yearRatio: -1.3
+    },
+  ],
 };
 export const Content00DataSource = {
   wrapper: {className: 'home-page-wrapper content0-wrapper'},
@@ -203,7 +245,7 @@ export const Content00DataSource = {
         name: 'title',
         children: (
           <span>
-            <p>回收项目</p>
+            <p>共享服务类型</p>
           </span>
         ),
       },
@@ -213,194 +255,67 @@ export const Content00DataSource = {
     className: 'content0-block-wrapper k9h76g7v2q-editor_css',
     children: [
       {
-        name: 'block0',
-        className: 'content0-block',
-        md: 8,
-        xs: 24,
-        children: {
-          className: 'content0-block-item',
-          children: [
-            {
-              name: 'image',
-              className: 'content0-block-icon',
-              children:
-                'https://zos.alipayobjects.com/rmsportal/WBnVOjtIlGWbzyQivuyq.png',
-            },
-            {
-              name: 'title',
-              className: 'content0-block-title',
-              children: (
-                <span>
-                  <span>
-                    <span>
-                      <p>电梯回收</p>
-                    </span>
-                  </span>
-                </span>
-              ),
-            },
-            {
-              name: 'content',
-              children: (
-                <span>
-                  <p>Elevator recovery</p>
-                </span>
-              ),
-            },
-          ],
-        },
+        name: 'businessObject',
+        label: '业务对象',
+        total: 148,
+        imgSrc: businessObject,
+        props: {span: 24, style: {marginTop: 20}}
       },
       {
-        name: 'block1',
-        className: 'content0-block',
-        md: 8,
-        xs: 24,
-        children: {
-          className: 'content0-block-item',
-          children: [
-            {
-              name: 'image',
-              className: 'content0-block-icon',
-              children:
-                'https://zos.alipayobjects.com/rmsportal/YPMsLQuCEXtuEkmXTTdk.png',
-            },
-            {
-              name: 'title',
-              className: 'content0-block-title',
-              children: (
-                <span>
-                  <p>铁铝铜回收</p>
-                </span>
-              ),
-            },
-            {
-              name: 'content',
-              children: (
-                <span>
-                  <span>
-                    <span>
-                      <p>Iron copper recovery</p>
-                    </span>
-                  </span>
-                </span>
-              ),
-            },
-          ],
-        },
+        name: 'businessActive',
+        label: '业务活动',
+        total: 148,
+        imgSrc: businessActive,
+        props: {span: 12, style: {paddingRight: 67, marginTop: -15}}
       },
       {
-        name: 'block2',
-        className: 'content0-block',
-        md: 8,
-        xs: 24,
-        children: {
-          className: 'content0-block-item',
-          children: [
-            {
-              name: 'image',
-              className: 'content0-block-icon',
-              children:
-                'https://zos.alipayobjects.com/rmsportal/EkXWVvAaFJKCzhMmQYiX.png',
-            },
-            {
-              name: 'title',
-              className: 'content0-block-title',
-              children: (
-                <span>
-                  <p>不锈钢回收</p>
-                </span>
-              ),
-            },
-            {
-              name: 'content',
-              children: (
-                <span>
-                  <p>Stainless steel recovery</p>
-                </span>
-              ),
-            },
-          ],
-        },
+        name: 'businessService',
+        label: '业务服务',
+        total: 148,
+        imgSrc: businessService,
+        props: {span: 12, style: {paddingLeft: 67, marginTop: -15}}
       },
       {
-        name: 'block3',
-        className: 'content0-block',
-        md: 8,
-        xs: 24,
-        children: {
-          className: 'content0-block-item',
-          children: [
-            {
-              name: 'image',
-              className: 'content0-block-icon',
-              children:
-                'https://zos.alipayobjects.com/rmsportal/EkXWVvAaFJKCzhMmQYiX.png',
-            },
-            {
-              name: 'title',
-              className: 'content0-block-title',
-              children: (
-                <span>
-                  <span>
-                    <p>工程拆除</p>
-                  </span>
-                </span>
-              ),
-            },
-            {
-              name: 'content',
-              children: (
-                <span>
-                  <p>Engineering dismantling</p>
-                </span>
-              ),
-            },
-          ],
-        },
+        name: 'businessScenes',
+        label: '业务场景',
+        total: 148,
+        imgSrc: businessScenes,
+        props: {span: 12, style: {paddingRight: 290, marginTop: 100}}
       },
       {
-        name: 'block4',
-        className: 'content0-block',
-        md: 8,
-        xs: 24,
-        children: {
-          className: 'content0-block-item',
-          children: [
-            {
-              name: 'image',
-              className: 'content0-block-icon',
-              children:
-                'https://zos.alipayobjects.com/rmsportal/EkXWVvAaFJKCzhMmQYiX.png',
-            },
-            {
-              name: 'title',
-              className: 'content0-block-title',
-              children: (
-                <span>
-                  <span>
-                    <p>中央空调回收</p>
-                  </span>
-                </span>
-              ),
-            },
-            {
-              name: 'content',
-              children: (
-                <span>
-                  <p>Air conditioning recovery</p>
-                </span>
-              ),
-            },
-          ],
-        },
+        name: 'dataService',
+        label: '数据服务',
+        total: 148,
+        imgSrc: dataService,
+        props: {span: 12, style: {paddingLeft: 290, marginTop: 100}}
       },
     ],
   },
+  footerWrapper: {
+    className: 'footer-wrapper',
+    children: [
+      {
+        name: '业务应用',
+        total: 128,
+        imgSrc: businessApp
+      },
+      {
+        name: '公共模型',
+        total: 328,
+        imgSrc: publicModel
+      },
+      {
+        name: '物理库表',
+        total: 70232,
+        imgSrc: table
+      }
+    ]
+  }
 };
 export const Content50DataSource = {
   wrapper: {className: 'home-page-wrapper content5-wrapper'},
   page: {className: 'home-page content5'},
-  OverPack: {playScale: 0.3, className: ''},
+  OverPack: {playScale: 0.1, className: ''},
   titleWrapper: {
     className: 'title-wrapper',
     children: [
@@ -408,128 +323,10 @@ export const Content50DataSource = {
         name: 'title',
         children: (
           <span>
-            <p>成功案例</p>
+            <p>微服务框架</p>
           </span>
         ),
         className: 'title-h1',
-      },
-    ],
-  },
-  block: {
-    className: 'content5-img-wrapper',
-    gutter: 16,
-    children: [
-      {
-        name: 'block0',
-        className: 'block',
-        md: 6,
-        xs: 24,
-        children: {
-          wrapper: {className: 'content5-block-content'},
-          img: {
-            children:
-              'https://t.alipayobjects.com/images/rmsweb/T11aVgXc4eXXXXXXXX.svg',
-          },
-          content: {children: 'Ant Design'},
-        },
-      },
-      {
-        name: 'block1',
-        className: 'block',
-        md: 6,
-        xs: 24,
-        children: {
-          wrapper: {className: 'content5-block-content'},
-          img: {
-            children:
-              'https://zos.alipayobjects.com/rmsportal/faKjZtrmIbwJvVR.svg',
-          },
-          content: {children: 'Ant Motion'},
-        },
-      },
-      {
-        name: 'block2',
-        className: 'block',
-        md: 6,
-        xs: 24,
-        children: {
-          wrapper: {className: 'content5-block-content'},
-          img: {
-            children:
-              'https://t.alipayobjects.com/images/rmsweb/T11aVgXc4eXXXXXXXX.svg',
-          },
-          content: {children: 'Ant Design'},
-        },
-      },
-      {
-        name: 'block3',
-        className: 'block',
-        md: 6,
-        xs: 24,
-        children: {
-          wrapper: {className: 'content5-block-content'},
-          img: {
-            children:
-              'https://zos.alipayobjects.com/rmsportal/faKjZtrmIbwJvVR.svg',
-          },
-          content: {children: 'Ant Motion'},
-        },
-      },
-      {
-        name: 'block4',
-        className: 'block',
-        md: 6,
-        xs: 24,
-        children: {
-          wrapper: {className: 'content5-block-content'},
-          img: {
-            children:
-              'https://t.alipayobjects.com/images/rmsweb/T11aVgXc4eXXXXXXXX.svg',
-          },
-          content: {children: 'Ant Design'},
-        },
-      },
-      {
-        name: 'block5',
-        className: 'block',
-        md: 6,
-        xs: 24,
-        children: {
-          wrapper: {className: 'content5-block-content'},
-          img: {
-            children:
-              'https://zos.alipayobjects.com/rmsportal/faKjZtrmIbwJvVR.svg',
-          },
-          content: {children: 'Ant Motion'},
-        },
-      },
-      {
-        name: 'block6',
-        className: 'block',
-        md: 6,
-        xs: 24,
-        children: {
-          wrapper: {className: 'content5-block-content'},
-          img: {
-            children:
-              'https://t.alipayobjects.com/images/rmsweb/T11aVgXc4eXXXXXXXX.svg',
-          },
-          content: {children: 'Ant Design'},
-        },
-      },
-      {
-        name: 'block7',
-        className: 'block',
-        md: 6,
-        xs: 24,
-        children: {
-          wrapper: {className: 'content5-block-content'},
-          img: {
-            children:
-              'https://zos.alipayobjects.com/rmsportal/faKjZtrmIbwJvVR.svg',
-          },
-          content: {children: 'Ant Motion'},
-        },
       },
     ],
   },
@@ -537,7 +334,25 @@ export const Content50DataSource = {
 export const Content30DataSource = {
   wrapper: {className: 'home-page-wrapper content3-wrapper'},
   page: {className: 'home-page content3'},
-  OverPack: {playScale: 0.3},
+  overPack: {playScale: 0.1},
+  titleWrapper: {
+    className: 'title-wrapper title3-wrapper',
+    children: [
+      {
+        name: 'title',
+        children: (
+          <span>
+            <p>实时调用趋势</p>
+          </span>
+        ),
+        className: 'title-h1',
+      },
+    ],
+  },
+};
+export const Content60DataSource = {
+  wrapper: {className: 'home-page-wrapper content6-wrapper'},
+  page: {className: 'home-page content6'},
   titleWrapper: {
     className: 'title-wrapper',
     children: [
@@ -545,167 +360,17 @@ export const Content30DataSource = {
         name: 'title',
         children: (
           <span>
-            <p>公司简介</p>
+            <p>微服务框架</p>
           </span>
         ),
         className: 'title-h1',
       },
-      {
-        name: 'content',
-        className: 'title-content',
-        children: (
-          <span>
-            <span>
-              <span>
-                <h2>苏州子浩物资回收有限公司</h2>
-              </span>
-            </span>
-          </span>
-        ),
-      },
-    ],
-  },
-  block: {
-    className: 'content3-block-wrapper',
-    children: [
-      {
-        name: 'block0',
-        className: 'content3-block',
-        md: 12,
-        xs: 24,
-        children: {
-          icon: {
-            className: 'content3-icon',
-            children:
-              'https://zos.alipayobjects.com/rmsportal/ScHBSdwpTkAHZkJ.png',
-          },
-          textWrapper: {className: 'content3-text'},
-          title: {
-            className: 'content3-title',
-            children: (
-              <span>
-                <span>
-                  <span>
-                    <p>回收项目</p>
-                  </span>
-                </span>
-              </span>
-            ),
-          },
-          content: {
-            className: 'content3-content',
-            children: (
-              <span>
-                <p>
-                  电梯回收，中央空调回收，废旧物资回收，机械设备回收，厨房、宾馆设备等。
-                </p>
-              </span>
-            ),
-          },
-        },
-      },
-      {
-        name: 'block1',
-        className: 'content3-block',
-        md: 12,
-        xs: 24,
-        children: {
-          icon: {
-            className: 'content3-icon',
-            children:
-              'https://zos.alipayobjects.com/rmsportal/NKBELAOuuKbofDD.png',
-          },
-          textWrapper: {className: 'content3-text'},
-          title: {
-            className: 'content3-title',
-            children: (
-              <span>
-                <p>企业精神</p>
-              </span>
-            ),
-          },
-          content: {
-            className: 'content3-content',
-            children: (
-              <span>
-                <p>开拓进取、锐意创新、刻意求真、崇尚完美。</p>
-              </span>
-            ),
-          },
-        },
-      },
-      {
-        name: 'block2',
-        className: 'content3-block',
-        md: 12,
-        xs: 24,
-        children: {
-          icon: {
-            className: 'content3-icon',
-            children:
-              'https://zos.alipayobjects.com/rmsportal/xMSBjgxBhKfyMWX.png',
-          },
-          textWrapper: {className: 'content3-text'},
-          title: {
-            className: 'content3-title',
-            children: (
-              <span>
-                <p>服务宗旨</p>
-              </span>
-            ),
-          },
-          content: {
-            className: 'content3-content',
-            children: (
-              <span>
-                <p>价格合理、信守承诺、安全快捷 、高效。</p>
-              </span>
-            ),
-          },
-        },
-      },
-      {
-        name: 'block3',
-        className: 'content3-block',
-        md: 12,
-        xs: 24,
-        children: {
-          icon: {
-            className: 'content3-icon',
-            children:
-              'https://zos.alipayobjects.com/rmsportal/MNdlBNhmDBLuzqp.png',
-          },
-          textWrapper: {className: 'content3-text'},
-          title: {
-            className: 'content3-title',
-            children: (
-              <span>
-                <span>
-                  <p>企业原则</p>
-                </span>
-              </span>
-            ),
-          },
-          content: {
-            className: 'content3-content',
-            children: (
-              <span>
-                <p>
-                  讲诚信、以信誉求发展。
-                  议、指导。前进中的望月将会在不断变化的各种客观条件下，把握市场动向，熟悉市场环境，完善的饰后服务，让客户真正感受到望月，热情、真诚、诚信的全方位服务。
-                </p>
-              </span>
-            ),
-          },
-        },
-      },
     ],
   },
 };
-export const Feature50DataSource = {
+export const Content70DataSource = {
   wrapper: {className: 'home-page-wrapper content7-wrapper'},
   page: {className: 'home-page content7'},
-  OverPack: {},
   titleWrapper: {
     className: 'title-wrapper',
     children: [
@@ -713,113 +378,15 @@ export const Feature50DataSource = {
         name: 'title',
         children: (
           <span>
-            <p>新闻资讯</p>
+            <p>热点服务字段</p>
           </span>
         ),
         className: 'title-h1',
       },
     ],
   },
-  tabsWrapper: {className: 'content7-tabs-wrapper'},
-  block: {
-    children: [
-      {
-        name: 'block0',
-        tag: {
-          className: 'content7-tag',
-          text: {
-            children: (
-              <span>
-                <p>公司新闻</p>
-              </span>
-            ),
-            className: 'content7-tag-name',
-          },
-          icon: {children: 'mobile'},
-        },
-        content: {
-          className: 'content7-content',
-          text: {
-            className: 'content7-text',
-            md: 14,
-            xs: 24,
-            children: (
-              <span>
-                <h3>技术</h3>
-                <p>
-                  丰富的技术组件，简单组装即可快速搭建金融级应用，丰富的技术组件，简单组装即可快速搭建金融级应用。
-                </p>
-                <br/>
-                <h3>融合</h3>
-                <p>
-                  解放业务及技术生产力，推动金融服务底层创新，推动金融服务底层创新。解放业务及技术生产力，推动金融服务底层创新。
-                </p>
-                <br/>
-                <h3>
-                  开放
-                </h3>符合金融及要求的安全可靠、高可用、高性能的服务能力，符合金融及要求的安全可靠、高可用、高性能的服务能力。
-              </span>
-            ),
-          },
-          img: {
-            className: 'content7-img',
-            children:
-              'https://zos.alipayobjects.com/rmsportal/xBrUaDROgtFBRRL.png',
-            md: 10,
-            xs: 24,
-          },
-        },
-      },
-      {
-        name: 'block1',
-        tag: {
-          className: 'content7-tag',
-          icon: {children: 'tablet'},
-          text: {
-            className: 'content7-tag-name',
-            children: (
-              <span>
-                <p>行业新闻</p>
-              </span>
-            ),
-          },
-        },
-        content: {
-          className: 'content7-content',
-          text: {
-            className: 'content7-text',
-            md: 14,
-            xs: 24,
-            children: (
-              <span>
-                <h3>技术</h3>
-                <p>
-                  丰富的技术组件，简单组装即可快速搭建金融级应用，丰富的技术组件，简单组装即可快速搭建金融级应用。
-                </p>
-                <br/>
-                <h3>融合</h3>
-                <p>
-                  解放业务及技术生产力，推动金融服务底层创新，推动金融服务底层创新。解放业务及技术生产力，推动金融服务底层创新。
-                </p>
-                <br/>
-                <h3>
-                  开放
-                </h3>符合金融及要求的安全可靠、高可用、高性能的服务能力，符合金融及要求的安全可靠、高可用、高性能的服务能力。
-              </span>
-            ),
-          },
-          img: {
-            className: 'content7-img',
-            md: 10,
-            xs: 24,
-            children:
-              'https://zos.alipayobjects.com/rmsportal/xBrUaDROgtFBRRL.png',
-          },
-        },
-      },
-    ],
-  },
 };
+
 export const Footer10DataSource = {
   wrapper: {className: 'home-page-wrapper footer1-wrapper'},
   OverPack: {className: 'footer1', playScale: 0.2},

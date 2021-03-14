@@ -8,7 +8,6 @@ import {SearchOutlined} from '@ant-design/icons';
 import style from './less/nav.module.less';
 
 const { Item, SubMenu } = Menu;
-const { Search } = Input;
 
 class Header3 extends React.Component {
   constructor(props) {

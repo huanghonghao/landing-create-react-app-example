@@ -5,10 +5,28 @@ import {TweenOneGroup} from 'rc-tween-one';
 import BannerAnim, {Element} from 'rc-banner-anim';
 import {isImg} from './utils';
 import 'rc-banner-anim/assets/index.css';
+import fall from './imgs/fall.png';
+import rise from './imgs/rise.png';
 
 const {BgElement} = Element;
 
 class Banner extends React.PureComponent {
+
+  renderTotal = total => {
+    let totalDom;
+    switch (typeof total) {
+      case 'undefined':
+        totalDom = null;
+        break;
+      case 'function':
+        totalDom = <span className="total">{total()}<span style={{fontSize: 16}}> 次</span></span>;
+        break;
+      default:
+        totalDom = <span className="total">{total}<span style={{fontSize: 16}}> 次</span></span>;
+    }
+    return totalDom;
+  };
+
   render() {
     const { ...props } = this.props;
     const { dataSource } = props;
@@ -18,7 +36,7 @@ class Banner extends React.PureComponent {
       const elem = item.BannerElement;
       const elemClassName = elem.className;
       delete elem.className;
-      const { bg, textWrapper, title, content, button } = item;
+      const { bg, textWrapper, title, content } = item;
       return (
         <Element key={i.toString()} {...elem} prefixCls={elemClassName}>
           <BgElement key="bg" {...bg} />
@@ -43,11 +61,28 @@ class Banner extends React.PureComponent {
         </Element>
       );
     });
+    const renderImg = ratio => <img src={ratio > 0 ? rise : fall} alt={ratio > 0 ? "上涨" : "下降"} />;
     const chartCard = dataSource.statistics.map(item => {
       return (
-        <Col span={dataSource.statistics.length}>
-          <Card bodyStyle={{ padding: '20px 24px 8px 24px' }} bordered={false}>
-            123
+        <Col key={item.title} xxl={dataSource.statistics.length + 1} xl={dataSource.statistics.length + 2} flex="340px">
+          <Card bodyStyle={{ padding: '20px 0 8px' }} bordered={false}>
+            <div className="banner1-card">
+              <img src={item.imgSrc} alt=""/>
+              <div className="banner1-card-right">
+                <div className="meta-wrap">
+                  <div className="meta">
+                    <span className="title">{item.title}</span>
+                  </div>
+                  {this.renderTotal(item.total)}
+                </div>
+                <div className="content" style={{ height: 'auto' }}>
+                  <span style={{marginRight: 8}}>环比：{item.monthRatio}</span>
+                  {renderImg(item.monthRatio)}
+                  <span style={{marginRight: 8, marginLeft: 15}}>同比：{item.yearRatio}</span>
+                  {renderImg(item.yearRatio)}
+                </div>
+              </div>
+            </div>
           </Card>
         </Col>
       );

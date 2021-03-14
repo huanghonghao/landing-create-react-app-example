@@ -1,24 +1,26 @@
 /* eslint no-undef: 0 */
 /* eslint arrow-parens: 0 */
 import React from 'react';
-import { enquireScreen } from 'enquire-js';
+import {enquireScreen} from 'enquire-js';
 
 import Nav3 from './Nav3';
 import Banner1 from './Banner1';
 import Content0 from './Content0';
 import Content5 from './Content5';
 import Content3 from './Content3';
-import Feature5 from './Feature5';
+import Content6 from './Content6';
+import Content7 from './Content7';
 import Footer1 from './Footer1';
 
 import {
-  Nav30DataSource,
   Banner10DataSource,
   Content00DataSource,
-  Content50DataSource,
   Content30DataSource,
-  Feature50DataSource,
+  Content50DataSource,
+  Content60DataSource,
+  Content70DataSource,
   Footer10DataSource,
+  Nav30DataSource
 } from './data.source';
 import './less/antMotionStyle.less';
 
@@ -88,10 +90,16 @@ export default class Home extends React.Component {
         dataSource={Content30DataSource}
         isMobile={this.state.isMobile}
       />,
-      <Feature5
-        id="Feature5_0"
-        key="Feature5_0"
-        dataSource={Feature50DataSource}
+      <Content6
+        id="Content6_0"
+        key="Content6_0"
+        dataSource={Content60DataSource}
+        isMobile={this.state.isMobile}
+      />,
+      <Content7
+        id="Content7_0"
+        key="Content7_0"
+        dataSource={Content70DataSource}
         isMobile={this.state.isMobile}
       />,
       <Footer1

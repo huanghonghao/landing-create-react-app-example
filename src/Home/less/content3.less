@@ -1,9 +1,91 @@
 @content3: content3;
 .@{content3}-wrapper {
-  min-height: 764px;
-  .@{content3} {
+  position: relative;
+  z-index: 2;
+  overflow: initial;
+  background-color: #3784FF;
+
+  .content3-bg-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
     height: 100%;
     overflow: hidden;
+
+    .@{content3}-bg {
+      position: absolute;
+      bottom: -200px;
+      left: 0;
+      width: 120%;
+      height: 400px;
+      background: #ffffff;
+      -webkit-transform: rotate(-6deg);
+      -ms-transform: rotate(-6deg);
+      transform: rotate(-6deg);
+      -webkit-transform-origin: 0;
+      -ms-transform-origin: 0;
+      transform-origin: 0;
+    }
+  }
+  .@{content3} {
+    position: relative;
+
+    .title3-wrapper {
+      h1 {
+        color: #ffffff;
+      }
+      .ant-radio-group .ant-radio-button-wrapper {
+        color: #ffffff;
+        background-color: #3784FF;
+        &-checked {
+          background-color: #ffffff;
+          color: #3784FF;
+        }
+      }
+    }
+
+    &-chart {
+      //width: 100%;
+      //max-width: 76%;
+      //margin: auto;
+      padding: 24px;
+      background: #ffffff;
+      box-shadow: 0 14px 28px 0 rgba(20,29,70,0.05);
+      border-radius: 4px;
+
+      &-area {
+        margin-right: 48px;
+
+        &-top {
+          justify-content: space-between;
+          display: flex;
+          margin: 44px 0 24px 0;
+
+          .ant-radio-group .ant-radio-button-wrapper-checked {
+            background: #E9F3FE;
+          }
+        }
+      }
+
+      &-sum {
+        font-size: 32px;
+        font-weight: 400;
+        line-height: 1.5;
+        &-desc {
+          line-height: 3;
+          > span:first-child {
+            margin-right: 24px;
+          }
+        }
+      }
+
+      .ant-col > div {
+        border-radius: 2px;
+        padding: 10px 24px;
+        color: #ffffff;
+      }
+    }
     & .title-content {
       text-align: center;
     }
