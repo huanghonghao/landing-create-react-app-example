@@ -7,17 +7,6 @@ const {Content} = Layout;
 
 class Content0 extends React.PureComponent {
 
-  state = {
-    showType: 0
-  };
-
-  onChange = e => {
-    console.log('radio checked', e.target.value);
-    this.setState({
-      showType: e.target.value,
-    });
-  };
-
   renderTotal = total => {
     let totalDom;
     switch (typeof total) {
@@ -35,7 +24,6 @@ class Content0 extends React.PureComponent {
 
   render() {
     const {dataSource, isMobile, ...props} = this.props;
-    const {showType} = this.state;
     const {
       wrapper,
       titleWrapper,
@@ -53,8 +41,8 @@ class Content0 extends React.PureComponent {
               {label: '运营概况', value: 1},
             ]}
             titleWrapper={titleWrapper}
-            leftProps={{xl: 9}}
-            rightProps={{xl: 10}}
+            leftProps={{xl: 10, xxl: 9}}
+            rightProps={{xl: 10, xxl: 9}}
           />
           <OverPack {...overPackData}>
             <Layout {...childWrapper}>

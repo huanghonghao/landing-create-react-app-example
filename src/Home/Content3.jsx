@@ -40,7 +40,7 @@ class Content3 extends React.PureComponent {
   render() {
     const { ...props } = this.props;
     const { dataSource } = props;
-    const { wrapper, page, titleWrapper, overPack } = dataSource;
+    const { wrapper, page, titleWrapper } = dataSource;
     return (
       <div {...props} {...wrapper}>
         <div className="content3-bg-wrapper">
@@ -53,8 +53,8 @@ class Content3 extends React.PureComponent {
               {label: '数据服务', value: 1},
             ]}
             titleWrapper={titleWrapper}
-            leftProps={{xl: 9}}
-            rightProps={{xl: 12}}
+            leftProps={{xl: 10, xxl: 9}}
+            rightProps={{xl: 10, xxl: 9}}
           />
           <Row justify="center" >
             <Col xl={20} xxl={18}>

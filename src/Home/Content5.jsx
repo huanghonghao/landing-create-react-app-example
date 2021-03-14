@@ -37,8 +37,8 @@ class Content5 extends React.PureComponent {
               {label: '大数据组件', value: 2},
             ]}
             titleWrapper={titleWrapper}
-            leftProps={{xl: 9}}
-            rightProps={{xl: 12}}
+            leftProps={{xl: 10, xxl: 9}}
+            rightProps={{xl: 10, xxl: 9}}
           />
           <OverPack
             className={`content-template ${props.className}`}

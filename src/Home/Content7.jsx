@@ -1,6 +1,8 @@
 import React from 'react';
-import {Card, Col, Divider, Row} from 'antd';
+import {Card, Col, Divider, Row, Typography} from 'antd';
 import TitleWrapper from "./TitleWrapper";
+
+const { Link } = Typography;
 
 class Content7 extends React.PureComponent {
 
@@ -15,7 +17,8 @@ class Content7 extends React.PureComponent {
         <div {...page}>
           <TitleWrapper
             titleWrapper={titleWrapper}
-            leftProps={{xl: 9}}
+            leftProps={{xl: 10, xxl: 9}}
+            rightProps={{xl: 10, xxl: 9}}
           />
           <Row
             // justify="center"
@@ -42,39 +45,39 @@ class Content7 extends React.PureComponent {
                     热点服务
                   </div>
                   <div className="content7-card-header-action">
-                    <a>更多 ></a>
+                    <Link>更多 ></Link>
                   </div>
                 </div>
                 <Divider />
                 <div className="content7-card-main">
-                  <p>
+                  <div>
                     <div>广东户变情况表</div>
                     <div>316,412</div>
-                  </p>
-                  <p>
+                  </div>
+                  <div>
                     <div>一致性情况历史表</div>
                     <div>316,412</div>
-                  </p>
-                  <p>
+                  </div>
+                  <div>
                     <div>广州局-生产计划致</div>
                     <div>316,412</div>
-                  </p>
-                  <p>
+                  </div>
+                  <div>
                     <div>广州局-生产计划查询</div>
                     <div>316,412</div>
-                  </p>
-                  <p>
+                  </div>
+                  <div>
                     <div>广州局-生产计划设备</div>
                     <div>316,412</div>
-                  </p>
-                  <p>
+                  </div>
+                  <div>
                     <div>广州局-性情况历史表</div>
                     <div>316,412</div>
-                  </p>
-                  <p>
+                  </div>
+                  <div>
                     <div>广州局-计划查询历史表</div>
                     <div>316,412</div>
-                  </p>
+                  </div>
                 </div>
               </Card>
             </Col>
@@ -85,7 +88,7 @@ class Content7 extends React.PureComponent {
                     热点表
                   </div>
                   <div className="content7-card-header-action">
-                    <a>更多 ></a>
+                    <Link>更多 ></Link>
                   </div>
                 </div>
                 <Divider />
@@ -109,7 +112,7 @@ class Content7 extends React.PureComponent {
                     热点字段
                   </div>
                   <div className="content7-card-header-action">
-                    <a>更多 ></a>
+                    <Link>更多 ></Link>
                   </div>
                 </div>
                 <Divider />

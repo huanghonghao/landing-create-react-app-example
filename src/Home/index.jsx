@@ -19,10 +19,12 @@ import {
   Content50DataSource,
   Content60DataSource,
   Content70DataSource,
+  Content80DataSource,
   Footer10DataSource,
-  Nav30DataSource
+  Nav30DataSource,
 } from './data.source';
 import './less/antMotionStyle.less';
+import Content8 from "./Content8";
 
 let isMobile;
 enquireScreen((b) => {
@@ -100,6 +102,12 @@ export default class Home extends React.Component {
         id="Content7_0"
         key="Content7_0"
         dataSource={Content70DataSource}
+        isMobile={this.state.isMobile}
+      />,
+      <Content8
+        id="Content8_0"
+        key="Content8_0"
+        dataSource={Content80DataSource}
         isMobile={this.state.isMobile}
       />,
       <Footer1

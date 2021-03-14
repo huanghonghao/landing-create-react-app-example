@@ -22,18 +22,22 @@ class TitleWrapper extends React.Component {
     return (
 
       <div {...titleWrapper}>
-        <Row justify="space-between">
+        <Row justify="center">
           <Col {...leftProps}>
-            {titleWrapper.children.map(getChildrenToRender)}
+            <span style={{textAlign: 'left'}}>
+              {titleWrapper.children.map(getChildrenToRender)}
+            </span>
           </Col>
           <Col {...rightProps}>
-            <Radio.Group
-              options={options}
-              onChange={this.onChange}
-              value={showType}
-              optionType="button"
-              buttonStyle="solid"
-            />
+            <div style={{float: 'right'}}>
+              <Radio.Group
+                options={options}
+                onChange={this.onChange}
+                value={showType}
+                optionType="button"
+                buttonStyle="solid"
+              />
+            </div>
           </Col>
         </Row>
       </div>

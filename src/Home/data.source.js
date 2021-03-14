@@ -386,7 +386,161 @@ export const Content70DataSource = {
     ],
   },
 };
-
+export const Content80DataSource = {
+  wrapper: { className: 'home-page-wrapper content8-wrapper' },
+  page: { className: 'home-page content8' },
+  OverPack: { playScale: 0.3 },
+  titleWrapper: {
+    className: 'title-wrapper',
+    children: [
+      {
+        name: 'title',
+        children: (
+          <span>
+            <p>帮助文档</p>
+          </span>
+        ),
+        className: 'title-h1',
+      },
+    ],
+  },
+  block: {
+    className: 'content8-block-wrapper',
+    children: [
+      {
+        name: 'block0',
+        className: 'content8-block',
+        md: 12,
+        xs: 24,
+        children: {
+          icon: {
+            className: 'content8-icon',
+            children:
+              'https://zos.alipayobjects.com/rmsportal/ScHBSdwpTkAHZkJ.png',
+          },
+          textWrapper: { className: 'content8-text' },
+          title: {
+            className: 'content8-title',
+            children: (
+              <span>
+                <span>
+                  <span>
+                    <p>回收项目</p>
+                  </span>
+                </span>
+              </span>
+            ),
+          },
+          content: {
+            className: 'content8-content',
+            children: (
+              <span>
+                <p>
+                  电梯回收，中央空调回收，废旧物资回收，机械设备回收，厨房、宾馆设备等。
+                </p>
+              </span>
+            ),
+          },
+        },
+      },
+      {
+        name: 'block1',
+        className: 'content8-block',
+        md: 12,
+        xs: 24,
+        children: {
+          icon: {
+            className: 'content8-icon',
+            children:
+              'https://zos.alipayobjects.com/rmsportal/NKBELAOuuKbofDD.png',
+          },
+          textWrapper: { className: 'content8-text' },
+          title: {
+            className: 'content8-title',
+            children: (
+              <span>
+                <p>企业精神</p>
+              </span>
+            ),
+          },
+          content: {
+            className: 'content8-content',
+            children: (
+              <span>
+                <p>开拓进取、锐意创新、刻意求真、崇尚完美。</p>
+              </span>
+            ),
+          },
+        },
+      },
+      {
+        name: 'block2',
+        className: 'content8-block',
+        md: 12,
+        xs: 24,
+        children: {
+          icon: {
+            className: 'content8-icon',
+            children:
+              'https://zos.alipayobjects.com/rmsportal/xMSBjgxBhKfyMWX.png',
+          },
+          textWrapper: { className: 'content8-text' },
+          title: {
+            className: 'content8-title',
+            children: (
+              <span>
+                <p>服务宗旨</p>
+              </span>
+            ),
+          },
+          content: {
+            className: 'content8-content',
+            children: (
+              <span>
+                <p>价格合理、信守承诺、安全快捷 、高效。</p>
+              </span>
+            ),
+          },
+        },
+      },
+      {
+        name: 'block3',
+        className: 'content8-block',
+        md: 12,
+        xs: 24,
+        children: {
+          icon: {
+            className: 'content8-icon',
+            children:
+              'https://zos.alipayobjects.com/rmsportal/MNdlBNhmDBLuzqp.png',
+          },
+          textWrapper: { className: 'content8-text' },
+          title: {
+            className: 'content8-title',
+            children: (
+              <span>
+                <span>
+                  <p>企业原则</p>
+                </span>
+              </span>
+            ),
+          },
+          content: {
+            className: 'content8-content',
+            children: (
+              <span>
+                <p>
+                  讲诚信、以信誉求发展。
+                  议、指导。前进中的望月将会在不断变化的各种客观条件下，把握市场动向，熟悉市场环境，完善的饰后服务，让客户真正感受到望月，热情、真诚、诚信的全方位服务。
+                </p>
+              </span>
+            ),
+          },
+        },
+      },
+    ],
+  },
+};
 export const Footer10DataSource = {
   wrapper: {className: 'home-page-wrapper footer1-wrapper'},
   OverPack: {className: 'footer1', playScale: 0.2},
