@@ -1,5 +1,4 @@
 import React from 'react';
-import {createFromIconfontCN} from '@ant-design/icons';
 import totalServiceCalls from './imgs/totalServiceCalls.png';
 import totalBusinessServiceCalls from './imgs/totalBusinessServiceCalls.png';
 import totalDataServiceCalls from './imgs/totalDataServiceCalls.png';
@@ -12,23 +11,20 @@ import dataService from './imgs/dataService.png';
 import businessApp from './imgs/businessApp.png';
 import publicModel from './imgs/publicModel.png';
 import table from './imgs/table.png';
+import down from './imgs/down.png';
+import helpOperationManual from './imgs/helpOperationManual.png';
+import helpPropaganda from './imgs/helpPropaganda.png';
+import helpSpecification from './imgs/helpSpecification.png';
+import helpWhitePaper from './imgs/helpWhitePaper.png';
+import logo from './imgs/logo.png';
 
-
-const Down = createFromIconfontCN({
-  extraCommonProps: {
-    height: 20,
-    width: 20
-  },
-  scriptUrl: '//at.alicdn.com/t/font_1731242_qtv348k3m1k.js', // 在 iconfont.cn 上生成
-});
 
 export const Nav30DataSource = {
   wrapper: {className: 'header3 home-page-wrapper'},
   page: {className: 'home-page'},
   logo: {
     className: 'header3-logo',
-    children:
-      'https://gw.alipayobjects.com/zos/basement_prod/b30cdc2a-d91c-4c78-be9c-7c63b308d4b3.svg',
+    children: logo,
   },
   Menu: {
     className: 'header3-menu',
@@ -59,7 +55,7 @@ export const Nav30DataSource = {
             {
               children: (
                 <span>
-                  <p>服务门户 <Down type="icon-down" /></p>
+                  <p>服务门户 <img src={down} alt=""/></p>
                 </span>
               ),
               name: 'text',
@@ -88,7 +84,7 @@ export const Nav30DataSource = {
             {
               children: (
                 <span>
-                  <p>服务设计 <Down type="icon-down" /></p>
+                  <p>服务设计 <img src={down} alt=""/></p>
                 </span>
               ),
               name: 'text',
@@ -105,7 +101,7 @@ export const Nav30DataSource = {
             {
               children: (
                 <span>
-                  <p>服务开发 <Down type="icon-down" /></p>
+                  <p>服务开发 <img src={down} alt=""/></p>
                 </span>
               ),
               name: 'text',
@@ -122,7 +118,7 @@ export const Nav30DataSource = {
             {
               children: (
                 <span>
-                  <p>服务运营 <Down type="icon-down" /></p>
+                  <p>服务运营 <img src={down} alt=""/></p>
                 </span>
               ),
               name: 'text',
@@ -139,7 +135,7 @@ export const Nav30DataSource = {
             {
               children: (
                 <span>
-                  <p>系统管理 <Down type="icon-down" /></p>
+                  <p>系统管理 <img src={down} alt=""/></p>
                 </span>
               ),
               name: 'text',
@@ -209,28 +205,32 @@ export const Banner10DataSource = {
       imgSrc: totalServiceCalls,
       total: 12033,
       monthRatio: 1.4,
-      yearRatio: -1.3
+      yearRatio: -1.3,
+      unit: '次'
     },
     {
       title: '业务服务调用总量',
       imgSrc: totalBusinessServiceCalls,
       total: 1815,
       monthRatio: 1.4,
-      yearRatio: -1.3
+      yearRatio: -1.3,
+      unit: '次'
     },
     {
       title: '数据服务调用总量',
       imgSrc: totalDataServiceCalls,
       total: 10218,
       monthRatio: 1.4,
-      yearRatio: -1.3
+      yearRatio: -1.3,
+      unit: '次'
     },
     {
-      title: '服务调用分布',
+      title: '服务调用率',
       imgSrc: serviceCallDistribution,
-      total: 9281,
+      total: 89,
       monthRatio: 1.4,
-      yearRatio: -1.3
+      yearRatio: -1.3,
+      unit: '%'
     },
   ],
 };
@@ -305,7 +305,7 @@ export const Content00DataSource = {
         imgSrc: publicModel
       },
       {
-        name: '物理库表',
+        name: '应用模型',
         total: 70232,
         imgSrc: table
       }
@@ -406,17 +406,19 @@ export const Content80DataSource = {
   },
   block: {
     className: 'content8-block-wrapper',
+    // justify: 'center',
+    gutter: [20, 20],
     children: [
       {
         name: 'block0',
         className: 'content8-block',
         md: 12,
         xs: 24,
+        xl: 8,
         children: {
           icon: {
             className: 'content8-icon',
-            children:
-              'https://zos.alipayobjects.com/rmsportal/ScHBSdwpTkAHZkJ.png',
+            children: helpWhitePaper,
           },
           textWrapper: { className: 'content8-text' },
           title: {
@@ -425,7 +427,7 @@ export const Content80DataSource = {
               <span>
                 <span>
                   <span>
-                    <p>回收项目</p>
+                    <p>白皮书</p>
                   </span>
                 </span>
               </span>
@@ -436,7 +438,7 @@ export const Content80DataSource = {
             children: (
               <span>
                 <p>
-                  电梯回收，中央空调回收，废旧物资回收，机械设备回收，厨房、宾馆设备等。
+                  中台技术白皮书-业务中台技术白皮书
                 </p>
               </span>
             ),
@@ -448,18 +450,18 @@ export const Content80DataSource = {
         className: 'content8-block',
         md: 12,
         xs: 24,
+        xl: 8,
         children: {
           icon: {
             className: 'content8-icon',
-            children:
-              'https://zos.alipayobjects.com/rmsportal/NKBELAOuuKbofDD.png',
+            children: helpOperationManual,
           },
           textWrapper: { className: 'content8-text' },
           title: {
             className: 'content8-title',
             children: (
               <span>
-                <p>企业精神</p>
+                <p>操作手册</p>
               </span>
             ),
           },
@@ -467,7 +469,7 @@ export const Content80DataSource = {
             className: 'content8-content',
             children: (
               <span>
-                <p>开拓进取、锐意创新、刻意求真、崇尚完美。</p>
+                <p>共享服务管理平台操作手册</p>
               </span>
             ),
           },
@@ -478,18 +480,18 @@ export const Content80DataSource = {
         className: 'content8-block',
         md: 12,
         xs: 24,
+        xl: 8,
         children: {
           icon: {
             className: 'content8-icon',
-            children:
-              'https://zos.alipayobjects.com/rmsportal/xMSBjgxBhKfyMWX.png',
+            children: helpPropaganda,
           },
           textWrapper: { className: 'content8-text' },
           title: {
             className: 'content8-title',
             children: (
               <span>
-                <p>服务宗旨</p>
+                <p>宣传统计</p>
               </span>
             ),
           },
@@ -497,7 +499,7 @@ export const Content80DataSource = {
             className: 'content8-content',
             children: (
               <span>
-                <p>价格合理、信守承诺、安全快捷 、高效。</p>
+                <p>共享服务管理平台产品介绍</p>
               </span>
             ),
           },
@@ -508,11 +510,11 @@ export const Content80DataSource = {
         className: 'content8-block',
         md: 12,
         xs: 24,
+        xl: 8,
         children: {
           icon: {
             className: 'content8-icon',
-            children:
-              'https://zos.alipayobjects.com/rmsportal/MNdlBNhmDBLuzqp.png',
+            children: helpSpecification,
           },
           textWrapper: { className: 'content8-text' },
           title: {
@@ -520,7 +522,7 @@ export const Content80DataSource = {
             children: (
               <span>
                 <span>
-                  <p>企业原则</p>
+                  <p>规范</p>
                 </span>
               </span>
             ),
@@ -530,8 +532,75 @@ export const Content80DataSource = {
             children: (
               <span>
                 <p>
-                  讲诚信、以信誉求发展。
-                  议、指导。前进中的望月将会在不断变化的各种客观条件下，把握市场动向，熟悉市场环境，完善的饰后服务，让客户真正感受到望月，热情、真诚、诚信的全方位服务。
+                  数研院-共享服务管理开发及调用规范
+                </p>
+              </span>
+            ),
+          },
+        },
+      },
+      {
+        name: 'block3',
+        className: 'content8-block',
+        md: 12,
+        xs: 24,
+        xl: 8,
+        children: {
+          icon: {
+            className: 'content8-icon',
+            children: helpSpecification,
+          },
+          textWrapper: { className: 'content8-text' },
+          title: {
+            className: 'content8-title',
+            children: (
+              <span>
+                <span>
+                  <p>规范</p>
+                </span>
+              </span>
+            ),
+          },
+          content: {
+            className: 'content8-content',
+            children: (
+              <span>
+                <p>
+                  数研院-共享服务管理开发及调用规范
+                </p>
+              </span>
+            ),
+          },
+        },
+      },
+      {
+        name: 'block3',
+        className: 'content8-block',
+        md: 12,
+        xs: 24,
+        xl: 8,
+        children: {
+          icon: {
+            className: 'content8-icon',
+            children: helpSpecification,
+          },
+          textWrapper: { className: 'content8-text' },
+          title: {
+            className: 'content8-title',
+            children: (
+              <span>
+                <span>
+                  <p>规范</p>
+                </span>
+              </span>
+            ),
+          },
+          content: {
+            className: 'content8-content',
+            children: (
+              <span>
+                <p>
+                  数研院-共享服务管理开发及调用规范
                 </p>
               </span>
             ),
@@ -539,151 +608,5 @@ export const Content80DataSource = {
         },
       },
     ],
-  },
-};
-export const Footer10DataSource = {
-  wrapper: {className: 'home-page-wrapper footer1-wrapper'},
-  OverPack: {className: 'footer1', playScale: 0.2},
-  block: {
-    className: 'home-page',
-    gutter: 0,
-    children: [
-      {
-        name: 'block0',
-        xs: 24,
-        md: 6,
-        className: 'block',
-        title: {
-          className: 'logo',
-          children:
-            'https://zos.alipayobjects.com/rmsportal/qqaimmXZVSwAhpL.svg',
-        },
-        childWrapper: {
-          className: 'slogan',
-          children: [
-            {
-              name: 'content0',
-              children: 'Animation specification and components of Ant Design.',
-            },
-          ],
-        },
-      },
-      {
-        name: 'block1',
-        xs: 24,
-        md: 6,
-        className: 'block',
-        title: {
-          children: (
-            <span>
-              <p>回收项目</p>
-            </span>
-          ),
-        },
-        childWrapper: {
-          children: [
-            {
-              name: 'link0',
-              href: '#',
-              children: (
-                <span>
-                  <span>
-                    <span>
-                      <p>电梯回收</p>
-                    </span>
-                  </span>
-                </span>
-              ),
-            },
-            {
-              name: 'link1',
-              href: '#',
-              children: (
-                <span>
-                  <p>铁铝铜回收</p>
-                </span>
-              ),
-            },
-            {
-              name: 'link2',
-              href: '#',
-              children: (
-                <span>
-                  <p>不锈钢回收</p>
-                </span>
-              ),
-            },
-            {
-              name: 'link3',
-              href: '#',
-              children: (
-                <span>
-                  <p>工程拆除</p>
-                </span>
-              ),
-            },
-            {
-              name: 'link4',
-              href: '#',
-              children: (
-                <span>
-                  <p>中央空调回收</p>
-                </span>
-              ),
-            },
-          ],
-        },
-      },
-      {
-        name: 'block2',
-        xs: 24,
-        md: 6,
-        className: 'block',
-        title: {children: '关于'},
-        childWrapper: {
-          children: [
-            {href: '#', name: 'link0', children: 'FAQ'},
-            {href: '#', name: 'link1', children: '联系我们'},
-          ],
-        },
-      },
-      {
-        name: 'block3',
-        xs: 24,
-        md: 6,
-        className: 'block',
-        title: {
-          children: (
-            <span>
-              <span>
-                <p>关注我们</p>
-              </span>
-            </span>
-          ),
-          className: 'k9h7k134cu-editor_css',
-        },
-        childWrapper: {
-          children: [
-            {
-              name: 'image~k9h7il8htc6',
-              className: 'k9h7irl6jgj-editor_css',
-              children:
-                'https://zos.alipayobjects.com/rmsportal/HzvPfCGNCtvGrdk.png',
-            },
-          ],
-        },
-      },
-    ],
-  },
-  copyrightWrapper: {className: 'copyright-wrapper'},
-  copyrightPage: {className: 'home-page'},
-  copyright: {
-    className: 'copyright',
-    children: (
-      <span>
-        ©2018 by <a href="https://motion.ant.design">Ant Motion</a> All Rights
-        Reserved
-      </span>
-    ),
   },
 };

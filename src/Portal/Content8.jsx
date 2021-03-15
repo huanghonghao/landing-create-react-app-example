@@ -31,43 +31,46 @@ class Content8 extends React.PureComponent {
           component={Col}
           animation={liAnim}
           key={item.name}
-          {...item}
-          componentProps={{ md: item.md, xs: item.xs }}
-          className={
-            !clearFloatNum
-              ? `${item.className || ''} clear-both`.trim()
-              : item.className
-          }
+
+          componentProps={{ md: item.md, xs: item.xs, xl: item.xl, xxl: item.xxl }}
         >
-          <TweenOne
-            animation={{
-              x: '-=10',
-              opacity: 0,
-              type: 'from',
-              ease: 'easeOutQuad',
-            }}
-            key="img"
-            {...childObj.icon}
+          <div
+            className={
+              !clearFloatNum
+                ? `${item.className || ''} clear-both`.trim()
+                : item.className
+            }
           >
-            <img src={childObj.icon.children} width="100%" alt="img" />
-          </TweenOne>
-          <div {...childObj.textWrapper}>
             <TweenOne
-              key="h2"
-              animation={childrenAnim}
-              component="h2"
-              {...childObj.title}
+              animation={{
+                x: '-=10',
+                opacity: 0,
+                type: 'from',
+                ease: 'easeOutQuad',
+              }}
+              key="img"
+              {...childObj.icon}
             >
-              {childObj.title.children}
+              <img src={childObj.icon.children} width="100%" alt="img" />
             </TweenOne>
-            <TweenOne
-              key="p"
-              animation={{ ...childrenAnim, delay: delay + 200 }}
-              component="div"
-              {...childObj.content}
-            >
-              {childObj.content.children}
-            </TweenOne>
+            <div {...childObj.textWrapper}>
+              <TweenOne
+                key="h2"
+                animation={childrenAnim}
+                component="h2"
+                {...childObj.title}
+              >
+                {childObj.title.children}
+              </TweenOne>
+              <TweenOne
+                key="p"
+                animation={{ ...childrenAnim, delay: delay + 200 }}
+                component="div"
+                {...childObj.content}
+              >
+                {childObj.content.children}
+              </TweenOne>
+            </div>
           </div>
         </TweenOne>
       );
@@ -82,8 +85,12 @@ class Content8 extends React.PureComponent {
           />
           <OverPack {...dataSource.OverPack}>
             <QueueAnim key="u" type="bottom">
-              <Row key="row" {...dataSource.block}>
-                {children}
+              <Row justify="center">
+                <Col xl={20} xxl={18}>
+                  <Row key="row" {...dataSource.block}>
+                    {children}
+                  </Row>
+                </Col>
               </Row>
             </QueueAnim>
           </OverPack>

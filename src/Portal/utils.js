@@ -1,6 +1,5 @@
-
 import React from 'react';
-import { Button } from 'antd';
+import {Button} from 'antd';
 
 export const isImg = /^http(s)?:\/\/([\w-]+\.)+[\w-]+(\/[\w-./?%&=]*)?/;
 export const getChildrenToRender = (item, i) => {

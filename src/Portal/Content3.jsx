@@ -4,37 +4,34 @@ import TitleWrapper from "./TitleWrapper";
 import {Area} from '@antv/g2plot';
 import fall from './imgs/fall.png';
 import numeral from 'numeral';
+import data from './1d565782-dde4-4bb6-8946-ea6a38ccf184.json';
 
 class Content3 extends React.PureComponent {
 
   componentDidMount() {
     // console.log(document.getElementById(content3-container));
-    fetch('https://gw.alipayobjects.com/os/bmw-prod/1d565782-dde4-4bb6-8946-ea6a38ccf184.json')
-      .then((res) => res.json())
-      .then((data) => {
-        const line = new Area('content3-container', {
-          data,
-          padding: 'auto',
-          xField: 'Date',
-          yField: 'scales',
-          xAxis: {
-            // type: 'timeCat',
-            tickCount: 12,
-          },
-          yAxis: {
-            label: {
-              formatter: v => numeral(v).format('0,0')
-            }
-          },
-          areaStyle: () => {
-            return {
-              fill: 'l(270) 0:#ffffff 0.5:#7ec2f3 1:#1890ff',
-            };
-          },
-        });
+    const line = new Area('content3-container', {
+      data,
+      padding: 'auto',
+      xField: 'Date',
+      yField: 'scales',
+      xAxis: {
+        // type: 'timeCat',
+        tickCount: 12,
+      },
+      yAxis: {
+        label: {
+          formatter: v => numeral(v).format('0,0')
+        }
+      },
+      areaStyle: () => {
+        return {
+          fill: 'l(270) 0:#ffffff 0.5:#7ec2f3 1:#1890ff',
+        };
+      },
+    });
 
-        line.render();
-      });
+    line.render();
   }
 
   render() {

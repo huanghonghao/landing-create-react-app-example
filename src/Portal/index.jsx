@@ -20,7 +20,6 @@ import {
   Content60DataSource,
   Content70DataSource,
   Content80DataSource,
-  Footer10DataSource,
   Nav30DataSource,
 } from './data.source';
 import './less/antMotionStyle.less';
@@ -33,7 +32,7 @@ enquireScreen((b) => {
 
 const { location } = window;
 
-export default class Home extends React.Component {
+export default class Portal extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -113,7 +112,6 @@ export default class Home extends React.Component {
       <Footer1
         id="Footer1_0"
         key="Footer1_0"
-        dataSource={Footer10DataSource}
         isMobile={this.state.isMobile}
       />,
     ];

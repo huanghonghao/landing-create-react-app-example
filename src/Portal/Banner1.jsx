@@ -12,17 +12,17 @@ const {BgElement} = Element;
 
 class Banner extends React.PureComponent {
 
-  renderTotal = total => {
+  renderTotal = item => {
     let totalDom;
-    switch (typeof total) {
+    switch (typeof item.total) {
       case 'undefined':
         totalDom = null;
         break;
       case 'function':
-        totalDom = <span className="total">{total()}<span style={{fontSize: 16}}> 次</span></span>;
+        totalDom = <span className="total">{item.total()}<span style={{fontSize: 16}}> {item.unit}</span></span>;
         break;
       default:
-        totalDom = <span className="total">{total}<span style={{fontSize: 16}}> 次</span></span>;
+        totalDom = <span className="total">{item.total}<span style={{fontSize: 16}}> {item.unit}</span></span>;
     }
     return totalDom;
   };
@@ -73,7 +73,7 @@ class Banner extends React.PureComponent {
                   <div className="meta">
                     <span className="title">{item.title}</span>
                   </div>
-                  {this.renderTotal(item.total)}
+                  {this.renderTotal(item)}
                 </div>
                 <div className="content" style={{ height: 'auto' }}>
                   <span style={{marginRight: 8}}>环比：{item.monthRatio}</span>
