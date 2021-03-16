@@ -4,21 +4,9 @@ import {getChildrenToRender} from "./utils";
 
 class TitleWrapper extends React.Component {
 
-  state = {
-    showType: 0
-  };
-
-  onChange = e => {
-    console.log('radio checked', e.target.value);
-    this.setState({
-      showType: e.target.value,
-    });
-  };
-
   render() {
 
-    const { showType } = this.state;
-    const { titleWrapper, options, leftProps, rightProps } = this.props;
+    const { titleWrapper, leftProps, rightProps, radioValue, ...rest } = this.props;
     return (
 
       <div {...titleWrapper}>
@@ -31,11 +19,10 @@ class TitleWrapper extends React.Component {
           <Col {...rightProps}>
             <div style={{float: 'right'}}>
               <Radio.Group
-                options={options}
-                onChange={this.onChange}
-                value={showType}
+                value={radioValue}
                 optionType="button"
                 buttonStyle="solid"
+                {...rest}
               />
             </div>
           </Col>

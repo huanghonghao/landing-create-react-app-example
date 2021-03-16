@@ -137,7 +137,7 @@ class Header3 extends React.Component {
               placeholder="搜索产品或内容"
               suffix={<SearchOutlined />}
             />
-            <Button type="text">控制台</Button>
+            <Button type="text" href="/dmpfront">控制台</Button>
             <Button type="text">登录</Button>
           </Space>
         </div>

@@ -158,7 +158,7 @@ export const Banner10DataSource = {
         bg: {className: 'bg bg0'},
         title: {
           className: 'banner1-title',
-          children: '打破壁垒、场景驱动、快速响应、赋能业务',
+          children: '场景驱动、快速响应、赋能业务',
         },
         content: {
           className: 'banner1-content',

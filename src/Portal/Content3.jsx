@@ -8,6 +8,10 @@ import data from './1d565782-dde4-4bb6-8946-ea6a38ccf184.json';
 
 class Content3 extends React.PureComponent {
 
+  state = {
+    radioValue: 0
+  };
+
   componentDidMount() {
     // console.log(document.getElementById(content3-container));
     const line = new Area('content3-container', {
@@ -35,6 +39,7 @@ class Content3 extends React.PureComponent {
   }
 
   render() {
+    const { radioValue } = this.state;
     const { ...props } = this.props;
     const { dataSource } = props;
     const { wrapper, page, titleWrapper } = dataSource;
@@ -52,6 +57,8 @@ class Content3 extends React.PureComponent {
             titleWrapper={titleWrapper}
             leftProps={{xl: 10, xxl: 9}}
             rightProps={{xl: 10, xxl: 9}}
+            radioValue={radioValue}
+            onChange={e => this.setState({radioValue: e.target.value})}
           />
           <Row justify="center" >
             <Col xl={20} xxl={18}>

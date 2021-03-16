@@ -1,11 +1,14 @@
 import React from 'react';
 import {Card, Col, Layout, Row} from 'antd';
-import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
 import TitleWrapper from "./TitleWrapper";
 
 const {Content} = Layout;
 
 class Content0 extends React.PureComponent {
+
+  state = {
+    radioValue: 0
+  };
 
   renderTotal = total => {
     let totalDom;
@@ -24,6 +27,7 @@ class Content0 extends React.PureComponent {
 
   render() {
     const {dataSource, isMobile, ...props} = this.props;
+    const { radioValue } = this.state;
     const {
       wrapper,
       titleWrapper,
@@ -43,8 +47,12 @@ class Content0 extends React.PureComponent {
             titleWrapper={titleWrapper}
             leftProps={{xl: 10, xxl: 9}}
             rightProps={{xl: 10, xxl: 9}}
+            radioValue={radioValue}
+            onChange={e => this.setState({radioValue: e.target.value})}
           />
-          <OverPack {...overPackData}>
+          {radioValue === 0 ? (
+            // <OverPack {...overPackData}>
+            // </OverPack>
             <Layout {...childWrapper}>
               <Content className="content-main">
                 <div className="content-main-share"/>
@@ -61,7 +69,25 @@ class Content0 extends React.PureComponent {
                 </Row>
               </Content>
             </Layout>
-          </OverPack>
+          ) : (
+            <Layout {...childWrapper}>
+              <Content className="content-main">
+                <div className="content-main-temp">
+                  <a className="content-main-temp1" target="_blank" href="/page/render/id/8a8a80c27478b4d7017478be96a80002?serviceCode=ucds.ucaccountinformation.updateaccount">
+                    更新账号1
+                  </a>
+                  <a className="content-main-temp2" target="_blank" href="/page/render/id/8a8a80c27478b4d7017478be96a80002?serviceCode=ucds.ucaccountinformation.updateaccount2">
+                    更新账号2
+                  </a>
+                  <div className="content-main-temp3" />
+                  <div className="content-main-temp4" />
+                  <div className="content-main-temp5">
+                    相似度 72.3%
+                  </div>
+                </div>
+              </Content>
+            </Layout>
+          )}
         </div>
         <Row justify="center" {...footerWrapper}>
           {footerWrapper.children.map((item, i) => {

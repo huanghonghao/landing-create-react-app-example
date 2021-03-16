@@ -51,32 +51,36 @@ class Content7 extends React.PureComponent {
                 <Divider />
                 <div className="content7-card-main">
                   <div>
-                    <div>广东户变情况表</div>
-                    <div>316,412</div>
+                    <div>
+                      <Link href="/page/render/id/4028abce7288404e017288473a51000b?serviceType=c29786d9a3a7595b866d13e7630c7dbb" target="_blank">
+                        固定资产卡片价值信息批量新增或修改
+                      </Link>
+                    </div>
+                    <div>116,412</div>
                   </div>
                   <div>
                     <div>一致性情况历史表</div>
-                    <div>316,412</div>
+                    <div>43,412</div>
                   </div>
                   <div>
                     <div>广州局-生产计划致</div>
-                    <div>316,412</div>
+                    <div>316,432</div>
                   </div>
                   <div>
                     <div>广州局-生产计划查询</div>
-                    <div>316,412</div>
+                    <div>116,412</div>
                   </div>
                   <div>
                     <div>广州局-生产计划设备</div>
-                    <div>316,412</div>
+                    <div>86,152</div>
                   </div>
                   <div>
                     <div>广州局-性情况历史表</div>
-                    <div>316,412</div>
+                    <div>56,712</div>
                   </div>
                   <div>
                     <div>广州局-计划查询历史表</div>
-                    <div>316,412</div>
+                    <div>37,347</div>
                   </div>
                 </div>
               </Card>

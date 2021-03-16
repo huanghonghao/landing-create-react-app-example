@@ -21,28 +21,28 @@ class Content6 extends React.PureComponent {
     }
 
     const data = [
-      { type: '人力中心', value: 27 },
-      { type: '设备中心', value: 25 },
+      { type: '人力中心', value: 23 },
+      { type: '设备中心', value: 21 },
       { type: '用户中心', value: 18 },
       { type: '财务中心', value: 15 },
       { type: '客户中心', value: 10 },
-      { type: '员工中心', value: 5 },
+      { type: '员工中心', value: 13 },
       { type: '项目中心', value: 5 },
     ];
 
     const piePlot = new Pie('content6-container', {
-      appendPadding: 150,
+      appendPadding: 0,
       data,
       angleField: 'value',
       colorField: 'type',
       legend: false, // 关闭图例
-      radius: 1,
+      radius: 0.5,
       innerRadius: 0.55,
       label: {
         type: 'spider',
         style: {
           textAlign: 'center',
-          fontSize: 20
+          fontSize: 16
         },
         // autoRotate: false,
         content: '{name}\n{value}',

@@ -7,6 +7,10 @@ import {CheckOutlined} from '@ant-design/icons';
 
 class Content5 extends React.PureComponent {
 
+  state = {
+    radioValue: 0
+  };
+
   getChildrenToRender = (data) =>
     data.map((item) => {
       return (
@@ -22,6 +26,7 @@ class Content5 extends React.PureComponent {
     });
 
   render() {
+    const { radioValue } = this.state;
     const { ...props } = this.props;
     const { dataSource } = props;
     delete props.dataSource;
@@ -39,6 +44,8 @@ class Content5 extends React.PureComponent {
             titleWrapper={titleWrapper}
             leftProps={{xl: 10, xxl: 9}}
             rightProps={{xl: 10, xxl: 9}}
+            radioValue={radioValue}
+            onChange={e => this.setState({radioValue: e.target.value})}
           />
           <OverPack
             className={`content-template ${props.className}`}
