@@ -1,25 +1,13 @@
 import React from 'react';
 import {Col, Row} from 'antd';
 import serviceInvokeIcon from './imgs/serviceInvokeIcon.png';
-import rise from "./imgs/rise.png";
-import fall from "./imgs/fall.png";
-import {measureTextWidth, Pie} from "@antv/g2plot";
+import {Pie} from "@antv/g2plot";
+import {renderStatistic} from './utils';
+import realTimeCallYearOnYear from './imgs/realTimeCallYearOnYear.svg';
 
 class Content6 extends React.PureComponent {
 
   componentDidMount() {
-    function renderStatistic(containerWidth, text, style) {
-      const { width: textWidth, height: textHeight } = measureTextWidth(text, style);
-      const R = containerWidth / 2;
-      // r^2 = (w / 2)^2 + (h - offsetY)^2
-      let scale = 1;
-      if (containerWidth < textWidth) {
-        scale = Math.min(Math.sqrt(Math.abs(Math.pow(R, 2) / (Math.pow(textWidth / 2, 2) + Math.pow(textHeight, 2)))), 1);
-      }
-      const textStyleStr = `width:${containerWidth}px;`;
-      return `<div style="${textStyleStr};font-size:${scale}em;line-height:${scale < 1 ? 1 : 'inherit'};">${text}</div>`;
-    }
-
     const data = [
       { type: '人力中心', value: 23 },
       { type: '设备中心', value: 21 },
@@ -31,6 +19,7 @@ class Content6 extends React.PureComponent {
     ];
 
     const piePlot = new Pie('content6-container', {
+      color: ['#FEB64D', '#60ACFC', '#3784FF', '#32D3EB', '#6370DE', '#5BC49F', '#EEE94E'],
       appendPadding: 0,
       data,
       angleField: 'value',
@@ -71,7 +60,7 @@ class Content6 extends React.PureComponent {
     delete props.dataSource;
     delete props.isMobile;
     const { wrapper, page } = dataSource;
-    const renderImg = ratio => <img src={ratio > 0 ? rise : fall} alt={ratio > 0 ? "上涨" : "下降"} />;
+    const renderImg = ratio => <img src={ratio > 0 ? realTimeCallYearOnYear : realTimeCallYearOnYear} alt={ratio > 0 ? "上涨" : "下降"} />;
     return (
       <div {...props} {...wrapper}>
         <div {...page}>

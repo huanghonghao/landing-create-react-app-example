@@ -8,6 +8,7 @@
     "@antv/g2": "^4.1.12",
     "@antv/g2plot": "^2.3.15",
     "antd": "^4.0.1",
+    "axios": "^0.21.1",
     "enquire-js": "^0.2.1",
     "numeral": "^2.0.6",
     "rc-banner-anim": "^2.2.2",

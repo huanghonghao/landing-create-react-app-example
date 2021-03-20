@@ -7,22 +7,75 @@ import {isImg} from './utils';
 import 'rc-banner-anim/assets/index.css';
 import fall from './imgs/fall.png';
 import rise from './imgs/rise.png';
+import numeral from 'numeral';
+import {
+  getBusinessRelativeRatio,
+  getBusinessServiceWeekOnWeek,
+  getDataServiceRelativeRatio,
+  getDataServiceWeekOnWeek,
+  getServiceCallRatioLast30Day,
+  getServiceCallRelativeRatio,
+  getServiceCallWeekOnWeek,
+  getServiceRelativeRatio,
+  getServiceWeekOnWeek,
+  getTotalBusinessServiceCallLast30Day,
+  getTotalDataServiceCallLast30Day,
+  getTotalServiceCallLast30Day
+} from '../utils/Api';
 
 const {BgElement} = Element;
 
 class Banner extends React.PureComponent {
 
-  renderTotal = item => {
+  state = {
+    service: {
+      total: '-',
+      relativeRatio: '-',
+      weekOnWeek: '-',
+    },
+    businessService: {
+      total: '-',
+      relativeRatio: '-',
+      weekOnWeek: '-',
+    },
+    dataService: {
+      total: '-',
+      relativeRatio: '-',
+      weekOnWeek: '-'
+    },
+    serviceCall: {
+      total: '-',
+      relativeRatio: '-',
+      weekOnWeek: '-'
+    }
+  };
+
+  componentDidMount() {
+    getTotalServiceCallLast30Day().then(res => this.setState((state) => ({service: {...state.service, total: res}})));
+    getServiceRelativeRatio().then(res => this.setState((state) => ({service: { ...state.service, relativeRatio: res }})));
+    getServiceWeekOnWeek().then(res => this.setState((state) => ({service: { ...state.service, weekOnWeek: res }})));
+    getTotalBusinessServiceCallLast30Day().then(res => this.setState((state) => ({businessService: {...state.businessService, total: res}})));
+    getBusinessRelativeRatio().then(res => this.setState((state) => ({businessService: {...state.businessService, relativeRatio: res}})));
+    getBusinessServiceWeekOnWeek().then(res => this.setState((state) => ({businessService: {...state.businessService, weekOnWeek: res}})));
+    getTotalDataServiceCallLast30Day().then(res => this.setState((state) => ({dataService: {...state.dataService, total: res}})));
+    getDataServiceRelativeRatio().then(res => this.setState((state) => ({dataService: {...state.dataService, relativeRatio: res}})));
+    getDataServiceWeekOnWeek().then(res => this.setState((state) => ({dataService: {...state.dataService, weekOnWeek: res}})));
+    getServiceCallRatioLast30Day().then(res => this.setState((state) => ({ serviceCall: { ...state.serviceCall, total: res }})));
+    getServiceCallRelativeRatio().then(res => this.setState((state) => ({ serviceCall: { ...state.serviceCall, relativeRatio: res }})));
+    getServiceCallWeekOnWeek().then(res => this.setState((state) => ({ serviceCall: { ...state.serviceCall, weekOnWeek: res }})));
+  }
+
+  renderTotal = (total, unit) => {
     let totalDom;
-    switch (typeof item.total) {
+    switch (typeof total) {
       case 'undefined':
         totalDom = null;
         break;
       case 'function':
-        totalDom = <span className="total">{item.total()}<span style={{fontSize: 16}}> {item.unit}</span></span>;
+        totalDom = <span className="total">{total()}<span style={{fontSize: 16}}> {unit}</span></span>;
         break;
       default:
-        totalDom = <span className="total">{item.total}<span style={{fontSize: 16}}> {item.unit}</span></span>;
+        totalDom = <span className="total">{Number.isInteger(total) ? total : '-'}<span style={{fontSize: 16}}> {unit}</span></span>;
     }
     return totalDom;
   };
@@ -61,10 +114,11 @@ class Banner extends React.PureComponent {
         </Element>
       );
     });
-    const renderImg = ratio => <img src={ratio > 0 ? rise : fall} alt={ratio > 0 ? "上涨" : "下降"} />;
-    const chartCard = dataSource.statistics.map(item => {
+    const renderImg = ratio => <img style={{width: 16, verticalAlign: 'text-top'}} src={ratio > 0 ? fall : rise} alt={ratio > 0 ? "上涨" : "下降"} />;
+    const chartCard = dataSource.statistics.map((item, i) => {
+      const data = this.state;
       return (
-        <Col key={item.title} xxl={dataSource.statistics.length + 1} xl={dataSource.statistics.length + 2} flex="340px">
+        <Col key={item.title} xxl={dataSource.statistics.length + 1} xl={dataSource.statistics.length + 2} >
           <Card bodyStyle={{ padding: '20px 0 8px' }} bordered={false}>
             <div className="banner1-card">
               <img src={item.imgSrc} alt=""/>
@@ -73,15 +127,17 @@ class Banner extends React.PureComponent {
                   <div className="meta">
                     <span className="title">{item.title}</span>
                   </div>
-                  {this.renderTotal(item)}
+                  {this.renderTotal(() => item.unit === '%' ?
+                    numeral(data[item.name].total).format('0.00') : (Number.isInteger(data[item.name].total) ? data[item.name].total : '-'), item.unit)}
                 </div>
                 <div className="content" style={{ height: 'auto' }}>
-                  <span style={{marginRight: 8}}>环比：{item.monthRatio}</span>
-                  {renderImg(item.monthRatio)}
-                  <span style={{marginRight: 8, marginLeft: 15}}>同比：{item.yearRatio}</span>
-                  {renderImg(item.yearRatio)}
+                  <span style={{marginRight: 8}}>环比：{numeral(data[item.name].relativeRatio).format('0.00%')}</span>
+                  {renderImg(data[item.name].relativeRatio)}
+                  <span style={{marginRight: 8, marginLeft: 15}}>同比：{numeral(data[item.name].weekOnWeek).format('0.00%')}</span>
+                  {renderImg(data[item.name].weekOnWeek)}
                 </div>
               </div>
+              {dataSource.statistics.length - 1 !== i && <div style={{float: 'right', height: 67, borderRight: '1px solid #EEEEEE', marginTop: 15}} />}
             </div>
           </Card>
         </Col>

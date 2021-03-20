@@ -11,18 +11,18 @@
       padding: 0;
     }
 
-    @media screen and (min-width: 1366px) {
-      &-row {
-        margin-left: 230px !important;
-        margin-right: -60px !important;
-      }
-    }
-
-    @media screen and (min-width: 767px) and (max-width: 1367px) {
-      &-row {
-        margin-left: 104px !important;
-      }
-    }
+    //@media screen and (min-width: 1366px) {
+    //  &-row {
+    //    margin-left: 230px !important;
+    //    margin-right: -60px !important;
+    //  }
+    //}
+    //
+    //@media screen and (min-width: 767px) and (max-width: 1367px) {
+    //  &-row {
+    //    margin-left: 104px !important;
+    //  }
+    //}
 
     &-card1 {
       background: url("../imgs/hostServiceBg.png");
@@ -30,6 +30,7 @@
       background-size: cover;
       color: #FFFFFF;
       padding: 40px 30px 18px 30px;
+      height: 399px;
 
       &-title {
         font-size: 17px;
@@ -53,6 +54,7 @@
         font-size: 14px;
         letter-spacing: 0;
         text-align: justify;
+        color: #FFFFFF;
       }
 
       &-footer {
@@ -80,10 +82,13 @@
         }
       }
       &-main {
-        > div, > p {
+        > div, > p, > span {
           justify-content: space-between;
           display: flex;
           line-height: 2.6;
+        }
+        .ant-typography-ellipsis-single-line {
+          width: 200px;
         }
         > ul {
           padding-left: 20px;

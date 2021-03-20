@@ -8,7 +8,6 @@ import businessActive from './imgs/businessActive.png';
 import businessScenes from './imgs/businessScenes.png';
 import businessService from './imgs/businessService.png';
 import dataService from './imgs/dataService.png';
-import businessApp from './imgs/businessApp.png';
 import publicModel from './imgs/publicModel.png';
 import table from './imgs/table.png';
 import down from './imgs/down.png';
@@ -165,42 +164,11 @@ export const Banner10DataSource = {
           children: '基于统一的业务模型，打造“可视、可管、可控、可优”的共享服务平台',
         },
       },
-      // {
-      //   name: 'elem1',
-      //   BannerElement: {className: 'banner-user-elem'},
-      //   textWrapper: {className: 'banner1-text-wrapper'},
-      //   bg: {className: 'bg bg1'},
-      //   title: {
-      //     className: 'banner1-title',
-      //     children:
-      //       'https://zos.alipayobjects.com/rmsportal/HqnZZjBjWRbjyMr.png',
-      //   },
-      //   content: {
-      //     className: 'banner1-content',
-      //     children: '一个高效的页面动画解决方案',
-      //   },
-      //   button: {className: 'banner1-button', children: 'Learn More'},
-      // },
-      // {
-      //   name: 'elem2',
-      //   BannerElement: {className: 'banner-user-elem'},
-      //   textWrapper: {className: 'banner1-text-wrapper'},
-      //   bg: {className: 'bg bg1'},
-      //   title: {
-      //     className: 'banner1-title',
-      //     children:
-      //       'https://zos.alipayobjects.com/rmsportal/HqnZZjBjWRbjyMr.png',
-      //   },
-      //   content: {
-      //     className: 'banner1-content',
-      //     children: '一个高效的页面动画解决方案',
-      //   },
-      //   button: {className: 'banner1-button', children: 'Learn More'},
-      // },
     ],
   },
   statistics: [
     {
+      name: 'service',
       title: '服务调用总量',
       imgSrc: totalServiceCalls,
       total: 12033,
@@ -209,6 +177,7 @@ export const Banner10DataSource = {
       unit: '次'
     },
     {
+      name: 'businessService',
       title: '业务服务调用总量',
       imgSrc: totalBusinessServiceCalls,
       total: 1815,
@@ -217,6 +186,7 @@ export const Banner10DataSource = {
       unit: '次'
     },
     {
+      name: 'dataService',
       title: '数据服务调用总量',
       imgSrc: totalDataServiceCalls,
       total: 10218,
@@ -225,6 +195,7 @@ export const Banner10DataSource = {
       unit: '次'
     },
     {
+      name: 'serviceCall',
       title: '服务调用率',
       imgSrc: serviceCallDistribution,
       total: 89,
@@ -262,7 +233,7 @@ export const Content00DataSource = {
         props: {span: 24, style: {marginTop: 20}}
       },
       {
-        name: 'businessActive',
+        name: 'businessActivity',
         label: '业务活动',
         total: 148,
         imgSrc: businessActive,
@@ -276,7 +247,7 @@ export const Content00DataSource = {
         props: {span: 12, style: {paddingLeft: 67, marginTop: -15}}
       },
       {
-        name: 'businessScenes',
+        name: 'businessScenario',
         label: '业务场景',
         total: 148,
         imgSrc: businessScenes,
@@ -294,11 +265,11 @@ export const Content00DataSource = {
   footerWrapper: {
     className: 'footer-wrapper',
     children: [
-      {
-        name: '业务应用',
-        total: 128,
-        imgSrc: businessApp
-      },
+      // {
+      //   name: '业务应用',
+      //   total: 128,
+      //   imgSrc: businessApp
+      // },
       {
         name: '公共模型',
         total: 328,

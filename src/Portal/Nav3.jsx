@@ -2,10 +2,10 @@ import React from 'react';
 import TweenOne from 'rc-tween-one';
 import {Button, Input, Menu, Space} from 'antd';
 import {getChildrenToRender} from './utils';
-import {SearchOutlined} from '@ant-design/icons';
 // TODO 添加路由
 // import { Link } from "react-router-dom";
 import style from './less/nav.module.less';
+import search from './imgs/search.png';
 
 const { Item, SubMenu } = Menu;
 
@@ -135,7 +135,7 @@ class Header3 extends React.Component {
             <Input
               size="large"
               placeholder="搜索产品或内容"
-              suffix={<SearchOutlined />}
+              suffix={<img src={search} alt=""/>}
             />
             <Button type="text" href="/dmpfront">控制台</Button>
             <Button type="text">登录</Button>

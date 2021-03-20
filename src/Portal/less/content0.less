@@ -7,6 +7,10 @@
     .ant-col {
       box-shadow: 15px 15px 30px rgba(167, 173, 177, 0.2);
     }
+    .ant-card-body {
+      padding: 23px 0;
+      text-align: center;
+    }
   }
 
   .@{content0} {
@@ -32,6 +36,7 @@
         font-size: 24px;
         color: #3784FF;
         letter-spacing: 0;
+        margin-right: 8px;
       }
 
       &-share {
@@ -109,23 +114,81 @@
 
     }
 
+    .content-main2 {
+      height: 666px;
+      &-card {
+        &-head {
+          padding: 24px 36px;
+          font-size: 18px;
+          font-weight: 600;
+        }
+        &-body {
+          &-desc {
+            border-radius: 4px;
+            background: rgba(55, 132, 255, 0.05);
+            &-col {
+              display: -webkit-inline-flex;
+              display: inline-flex;
+              padding: 18px;
+              justify-content: space-between;
+              width: 100%;
+              > div {
+                display: -webkit-inline-flex;
+                display: inline-flex;
+              }
+
+              .ant-btn {
+                background: #FFFFFF;
+              }
+
+              li {
+                &[class^='normal'] {
+                  background: #3784FF;
+                }
+                &[class^='error'] {
+                  background: #F16547;
+                }
+                width: 12px;
+                height: 12px;
+                list-style: none;
+                margin: 10px 12px 0 0;
+              }
+
+              div > span {
+                &[class~='normal'] {
+                  color: #3784FF;
+                }
+                &[class~='error'] {
+                  color: #F16547;
+                }
+                font-size: 20px;
+                font-weight: 600;
+              }
+            }
+          }
+        }
+      }
+    }
+
     &-card {
       position: relative;
       img {
         vertical-align: top;
       }
       &-right {
-        display: inline-block;
+        display: inline-flex;
+        display: -webkit-inline-flex;
         //vertical-align: bottom;
         margin-top: 15px;
         margin-left: 18px;
+        text-align: start;
       }
 
       .meta-wrap {
-        float: left;
         position: relative;
         overflow: hidden;
         width: 100%;
+
       }
 
       .meta {

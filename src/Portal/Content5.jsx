@@ -1,9 +1,7 @@
 import React from 'react';
 import {Button, Col, Row} from 'antd';
-import {TweenOneGroup} from 'rc-tween-one';
-import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
 import TitleWrapper from "./TitleWrapper";
-import {CheckOutlined} from '@ant-design/icons';
+import yes from './imgs/yes.svg';
 
 class Content5 extends React.PureComponent {
 
@@ -47,7 +45,68 @@ class Content5 extends React.PureComponent {
             radioValue={radioValue}
             onChange={e => this.setState({radioValue: e.target.value})}
           />
-          <OverPack
+          <Row justify="center" className="content5-main">
+            <Col xl={6} className="content5-main-left">
+              <div className="content5-main-left-title">
+                微服务框架
+              </div>
+              <div className="content5-main-left-desc1">
+                微服务架构是一项在云中部署应用和服务的新技术。大部分围绕微服务的争论都集中在容器或其他技术是否很好的实施微服务
+              </div>
+              <div className="content5-main-left-desc2">
+                <img src={yes} alt="" width={20}/>
+                <span> 解决业务协同和数据共享的难题</span>
+              </div>
+              <div className="content5-main-left-desc3">
+                <img src={yes} alt="" width={20}/>
+                <span> 支撑前端应用敏捷迭代和快速复制</span>
+              </div>
+              <Button type="primary" size="large">
+                查看更多
+              </Button>
+            </Col>
+            <Col xxl={12} xl={14} className="content5-main-right">
+              <Row>
+                <Col xl={8} className="content5-main-right-content">
+                  <div className="content5-main-right-title">网关服务</div>
+                  <div className="content5-main-right-desc">网关服务是单一访问点，并充当多项服务的代理。服务网关启用了跨所有服务的变换、路由和公共处理。</div>
+                  <div className="content5-main-right-tag">网关杀毒</div>
+                  <div className="content5-main-right-tag">Web过滤</div>
+                </Col>
+                <Col xl={8} className="content5-main-right-content">
+                  <div className="content5-main-right-title">路由服务</div>
+                  <div className="content5-main-right-desc">网关服务是单一访问点，并充当多项服务的代理。服务网关启用了跨所有服务的变换、路由和公共处理。</div>
+                  <div className="content5-main-right-tag">网关杀毒</div>
+                  <div className="content5-main-right-tag">Web过滤</div>
+                </Col>
+                <Col xl={8} className="content5-main-right-content">
+                  <div className="content5-main-right-title">鉴权服务</div>
+                  <div className="content5-main-right-desc">网关服务是单一访问点，并充当多项服务的代理。服务网关启用了跨所有服务的变换、路由和公共处理。</div>
+                  <div className="content5-main-right-tag">网关杀毒</div>
+                  <div className="content5-main-right-tag">Web过滤</div>
+                </Col>
+                <Col xl={8} className="content5-main-right-content">
+                  <div className="content5-main-right-title">分布式事务</div>
+                  <div className="content5-main-right-desc">网关服务是单一访问点，并充当多项服务的代理。服务网关启用了跨所有服务的变换、路由和公共处理。</div>
+                  <div className="content5-main-right-tag">网关杀毒</div>
+                  <div className="content5-main-right-tag">Web过滤</div>
+                </Col>
+                <Col xl={8} className="content5-main-right-content">
+                  <div className="content5-main-right-title">日志服务</div>
+                  <div className="content5-main-right-desc">网关服务是单一访问点，并充当多项服务的代理。服务网关启用了跨所有服务的变换、路由和公共处理。</div>
+                  <div className="content5-main-right-tag">网关杀毒</div>
+                  <div className="content5-main-right-tag">Web过滤</div>
+                </Col>
+                <Col xl={8} className="content5-main-right-content">
+                  <div className="content5-main-right-title">全链路服务</div>
+                  <div className="content5-main-right-desc">网关服务是单一访问点，并充当多项服务的代理。服务网关启用了跨所有服务的变换、路由和公共处理。</div>
+                  <div className="content5-main-right-tag">网关杀毒</div>
+                  <div className="content5-main-right-tag">Web过滤</div>
+                </Col>
+              </Row>
+            </Col>
+          </Row>
+          {/*<OverPack
             className={`content-template ${props.className}`}
             {...dataSource.OverPack}
           >
@@ -124,7 +183,7 @@ class Content5 extends React.PureComponent {
                 </Row>
               </Col>
             </TweenOneGroup>
-          </OverPack>
+          </OverPack>*/}
         </div>
       </div>
     );
